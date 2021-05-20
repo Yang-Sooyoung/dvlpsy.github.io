@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oboard">
+	<select id="getBoardCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM BOARD B INNER JOIN MEMBERS M
+		                     ON B.MNO = M.MNO
+		WHERE B.BOARD_DEL = 0
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn eq 0">
+					AND B.BOARD_TITLE LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn eq 1">
+					AND M.MNM LIKE '%' || #{searchTxt} || '%'
+				</when>
+			</choose>
+		</if>
+	</select>
+	
+	<select id="getBoardList" parameterType="hashmap" resultType="hashmap">
+		SELECT B.BOARD_NO, B.BOARD_TITLE, B.BOARD_HIT, B.BOARD_DT, B.MNM
+		FROM (  SELECT B.BOARD_NO, B.BOARD_TITLE, B.BOARD_HIT, 
+		               TO_CHAR(B.BOARD_DT, 'YYYY-MM-DD') AS BOARD_DT, M.MNM,
+		               ROW_NUMBER() OVER(ORDER BY B.BOARD_NO DESC) AS RNUM
+		        FROM BOARD B INNER JOIN MEMBERS M
+		                             ON B.MNO = M.MNO
+		        WHERE B.BOARD_DEL = 0
+		        <if test="searchTxt != null and searchTxt != ''">
+					<choose>
+						<when test="searchGbn eq 0">
+							AND B.BOARD_TITLE LIKE '%' || #{searchTxt} || '%'
+						</when>
+						<when test="searchGbn eq 1">
+							AND M.MNM LIKE '%' || #{searchTxt} || '%'
+						</when>
+					</choose>
+				</if>
+		     ) B
+		WHERE B.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	
+	<insert id="boardAdd" parameterType="hashmap">
+		INSERT INTO BOARD(BOARD_NO, MNO, BOARD_TITLE, BOARD_CON)
+		VALUES(BOARD_SEQ.NEXTVAL, #{mno}, #{boardTitle}, #{boardCon})
+	</insert>
+	
+	<select id="getBoard" parameterType="hashmap" resultType="hashmap">
+		SELECT B.BOARD_NO, B.BOARD_TITLE, B.BOARD_CON, B.BOARD_HIT, 
+		       TO_CHAR(B.BOARD_DT, 'YYYY-MM-DD') AS BOARD_DT, M.MNO, M.MNM
+		FROM BOARD B INNER JOIN MEMBERS M
+		                     ON B.MNO = M.MNO
+		WHERE B.BOARD_NO = #{boardNo}
+	</select>
+	
+	<update id="updateBoardHit" parameterType="hashmap">
+		UPDATE BOARD SET BOARD_HIT = BOARD_HIT + 1
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+	
+	<update id="boardUpdate" parameterType="hashmap">
+		UPDATE BOARD SET BOARD_TITLE = #{boardTitle},
+		                 BOARD_CON = #{boardCon}
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+	
+	<update id="boardDelete" parameterType="hashmap">
+		UPDATE BOARD SET BOARD_DEL = 1
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+	
+	<select id="getOBoardCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM OBOARD
+		WHERE OB_DEL = 0
+	</select>
+	
+	<select id="getOboardList" parameterType="hashmap" resultType="hashmap">
+		SELECT O.OB_NO, O.MNO, O.MNM, O.OB_CON
+		FROM (SELECT O.OB_NO, M.MNO, M.MNM, O.OB_CON,
+		             ROW_NUMBER() OVER(ORDER BY O.OB_NO DESC) AS RNUM
+		      FROM OBOARD O INNER JOIN MEMBERS M
+		                            ON O.MNO = M.MNO
+		      WHERE O.OB_DEL = 0) O
+		WHERE O.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	
+	<insert id="oBoardAdd" parameterType="hashmap">
+		INSERT INTO OBOARD(OB_NO, MNO, OB_CON)
+		VALUES(OBOARD_SEQ.NEXTVAL, #{mno}, #{obCon})
+	</insert>
+	
+	<update id="oBoardUpdate" parameterType="hashmap">
+		UPDATE OBOARD SET OB_CON = #{obCon}
+		WHERE OB_NO = #{obNo}
+		AND MNO = #{mno}
+	</update>
+	
+	<update id="oBoardDelete" parameterType="hashmap">
+		UPDATE OBOARD SET OB_DEL = 1
+		WHERE OB_NO = #{obNo}
+		AND MNO = #{mno}
+	</update>
+</mapper>
+
+
+
+
+
+
+

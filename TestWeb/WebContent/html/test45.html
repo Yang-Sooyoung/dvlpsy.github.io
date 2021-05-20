@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript" 
+		src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+var com = [];
+var round = 1;
+var s = 0;
+var b = 0;
+var o = 0;
+var i;
+
+
+$(document).ready(function() { //준비가 되면 함수를 시작하겠다.
+	make(); //함수를 실행한다.
+	
+	$("#btnWrap").on("click", "[type='button']", function() {
+		$("#txt").val($("#txt").val() + $(this).val());
+		// attr : 속성
+		$(this).attr("disabled", "disabled");
+		
+		if($("#txt").val().length == 3) {
+			//셀렉터 활용
+			//$("#btnWrap input:enabled").attr("disabled", "disabled");
+		
+			//each : 셀렉터의 개수만큼 함수를 실행
+			$("#btnWrap input").each(function() {
+				// each에서의 this : 해당 순서의 셀렉터 객체
+				// is(셀렉터)는 해당 객체가 지정한 셀렉터인지 확인하여 맞으면 true 틀리면 false
+				if($(this).is(":enabled")) {
+					$(this).attr("disabled", "disabled");
+					
+				}
+			});
+		}
+	});
+	
+	$("#checkBtn").on("click", function() {
+		 if($("#txt").val().length == 3) {
+			//비교 : 단일반복문, charAt과 indexOf 활용
+			//해당 위치랑 비교 위치 같, 있으면 : s 위치는 다른데, 있으면 : b 없으면x o,
+			
+			for(var i=0; i<3; i++) {
+				if(com.indexOf($("#txt").val().charAt(i)) == -1) {
+					o++;
+				} else if(com.indexOf($("#txt").val().charAt(i)) != -1 && com.indexOf($("#txt").val().charAt(i)) == i) {
+					s++;
+				} else {
+					b++;
+				}
+			}
+			
+			console.log(round + "회차 : " + s + "s" + b + "b" + o + "o")
+			
+			
+			//결과출력 ex) 1회차 : 1s 2o(123)
+			var html = (round + "회차 : " + s + "s" + b + "b" + o + "o") + $("#txt").val() + "<br/>";
+			// append(값) : 해당 엔티티의 뒤에 값을 이어붙인다.
+			$("#result").append(html);
+			//document.getElementBtId("result").innerHTML += html;
+			
+			// prepend(값) : 해당 엔티티의 앞에 값을 이어붙인다.
+			//$("#result").prepend(html);
+			//document.getElementBtId("result").innerHTML
+			//= html + document.getElementById("result").innerHTML;
+			
+			//html(값) : 해당 엔티티를 값으로 교체한다.
+			//$("#result").html(html);
+			//document.getElementBtId("result").innerHTML = html;
+		
+		
+			
+			round++;
+			
+			if(round < 10 && s == 3) {
+				alert("성공");
+			} else if(round == 10) {
+				alert("실패");
+			} else {
+				$("#txt").val("");
+				
+				//removeAttr(값) : 값에 해당하는 속성을 제거한다.
+				$("#btnWrap input").removeAttr("disabled");
+				
+				s = 0;
+				b = 0;
+				o = 0;
+			}
+	} // #checkBtn click end	
+	$("#resetBtn").on("click", function() { 
+			$("#txt").val("");
+			$("#btnWrap input").removeAttr("disabled");
+			
+			// empty() : 엔티티를 지운다.
+			$("#result").empty();
+			
+			com = "";
+			round = 1;
+			s = 0;
+			b = 0;
+			o = 0;
+			
+			make();
+			//$("#result").html("");
+	}); // #resetBtn click end
+});
+
+
+function make() {
+	// 중복되지 않는 수 생성, com에 누적. 반복문1개 사용. random, indexOf 사용.
+
+	for(var i=0; i < 3; i++) {
+		//랜덤?을 먼저 생성 하나만, 그게 컴에 있는지 없는지 찾음. 없으면 누적, 있으면 반복 다시...............
+		var p = Math.floor(Math.random()*9)+1; 		
+		
+		if(com.indexOf(p) == -1) {
+		com += p;
+		} else {
+			i--;
+		}
+		
+	} console.log(com);
+	
+}
+
+});
+</script>
+</head>
+<body>
+<div id ="btnWrap">
+	<input type="button" value="1" />
+	<input type="button" value="2" />
+	<input type="button" value="3" />
+	<input type="button" value="4" />
+	<input type="button" value="5" />
+	<input type="button" value="6" />
+	<input type="button" value="7" />
+	<input type="button" value="8" />
+	<input type="button" value="9" />
+</div>
+<input type="button" value="check" id="checkBtn" />
+<input type="button" value="reset" id="resetBtn" />
+<br/>
+<input type="text" id="txt" readonly="readonly" />
+<div id="result"></div>
+</body>
+</html>

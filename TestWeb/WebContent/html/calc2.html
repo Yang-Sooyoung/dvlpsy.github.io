@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function num(obj) {
+	var input_val = document.getElementById("input_val");
+	
+	if(obj.value != "+" && //입력이 부호값들이 아닐경우
+	   obj.value != "-" &&
+	   obj.value != "*" &&
+	   obj.value != "/") {
+		if(input_val.value == "0") { // 숫자 0인 경우
+			input_val.value = obj.value; // 입력값 넣어줌
+		} else {
+			input_val.value += obj.value; // 0 아니면 입력값 덮어씌워줌
+		}
+	} else {
+		input_val.value += obj.value; // 입력값 덮어씌어줌
+	}
+}
+
+function calc() {
+	var input_val = document.getElementById("input_val");
+	var result_val = document.getElementById("result_val");
+	
+	result_val.value = eval(input_val.value);
+} //결과바에 인풋바 계산값 넣어줌
+
+function clr() {
+	var input_val = document.getElementById("input_val");
+	var result_val = document.getElementById("result_val");
+	input_val.value = "0";
+	result_val.value = "";
+}
+</script>
+</head>
+<body>
+<input type="text" id="result_val" />
+<br/>
+<input type="text" id="input_val" value="0" />
+<br/>
+<input type="button" value="7" onclick="num(this);" />
+<input type="button" value="8" onclick="num(this);" />
+<input type="button" value="9" onclick="num(this);" />
+<input type="button" value="+" onclick="num(this);" />
+<br/>
+<input type="button" value="4" onclick="num(this);" />
+<input type="button" value="5" onclick="num(this);" />
+<input type="button" value="6" onclick="num(this);" />
+<input type="button" value="-" onclick="num(this);" />
+<br/>
+<input type="button" value="1" onclick="num(this);" />
+<input type="button" value="2" onclick="num(this);" />
+<input type="button" value="3" onclick="num(this);" />
+<input type="button" value="*" onclick="num(this);" />
+<br/>
+<input type="button" value="0" onclick="num(this);" />
+<input type="button" value="c" onclick="clr();" />
+<input type="button" value="=" onclick="calc();" />
+<input type="button" value="/" onclick="num(this);" />
+<br/>
+</body>
+</html>

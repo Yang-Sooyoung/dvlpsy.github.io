@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.default_board {
+	width: 800px;
+}
+
+.default_board table {
+	border-collapse: collapse;
+	text-align: center;
+	border-color: #c2c2c2;
+	margin-top: 10px;
+	border-top: 2px solid #7f7f7f;
+	border-bottom: 2px solid #7f7f7f;
+	font-size: 10pt;
+}
+
+.default_board table th {
+	color: #3c3c3d;
+	font-size: 11pt;
+}
+
+.default_board table tbody tr {
+	height: 40px;
+	border-top: 1px solid #c2c2c2;
+	cursor: pointer;
+}
+
+.default_board table tbody tr:hover {
+	background-color: #022859;
+	color: #fff;
+}
+
+.default_board .top {
+	height: 45px;
+	padding: 10px 0px;
+	color: #292d33;
+	background-color: #E4EAF2;
+}
+
+

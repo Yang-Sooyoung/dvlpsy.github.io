@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JAVASCRIPT 연습</title>
+<script type="text/javascript">
+var a = 2;
+
+switch(a) {
+case 1 : console.log("1이다");
+		break;
+case 2 : console.log("2이다");
+		break;
+default: console.log("아무것도아니다");
+}
+// Math.floor(숫자):숫자를 버림처리한다.
+console.log(Math.floor(1.2));
+
+var score = 77; 
+//switch를 이용하여 학점을 구하시오.
+//범위는 A,B,C,D,F로 구현하고,
+//A+, A, B+, B, C+, C, D+, D, F로 구분하시오.
+switch(Math.floor(score/5)) {
+case 20 : // 20은 19에 걸리기 때문에 필요없음. 그래도 값은 넣어줘야되나?
+case 19 : console.log("A+"); //곱하면 100,
+		break;
+case 18 : console.log("A"); //곱하면 95
+		break;
+case 17 : console.log("B+"); //곱하면 90
+		break;
+case 16 : console.log("B"); //85
+		break;
+case 15 : console.log("C+"); //80 
+		break;
+case 14 : console.log("C"); //75
+		break;
+case 13 : console.log("D+"); //70
+		break;
+case 12 : console.log("D"); //65
+		break;
+default : console.log("F"); //60
+}
+
+var c = 1;
+
+c += 2;
+console.log(c);
+
+c -= 2;
+console.log(c);
+
+c *= 2;
+console.log(c);
+
+c /= 2;
+console.log(c);
+
+c %= 2;
+console.log(c); // 1
+					//츌력전 출력 출력후
+console.log(++c);	// 	2	2	2
+console.log(c++);	// 	2	2	3	
+console.log(--c);	// 	2	2	2
+console.log(c--);	//	2	2	1
+
+//c+ : 75 ~ 79
+
+if(score >= 75 && score <= 79) {
+	console.log("C+");
+	
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

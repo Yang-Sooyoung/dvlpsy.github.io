@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JAVASCRIPT 연습</title>
+<script type="text/javascript">
+var s = "";
+
+for(var i =0; i <= 4 ; i++) {
+	for(var j =0;  j <= i; j++) {
+		s += "*";
+	}
+	s += "\n";
+}
+
+console.log(s);
+
+var s= "";
+
+for(var i = 4; i >= 0 ; i--) {
+	for(var j = 0; j <= i ; j++) {
+		s += "*";
+	}
+	s += "\n";
+}
+
+console.log(s);
+
+
+var s = "";
+
+for(var i=1;  i <= 5 ; i++) {
+	for(var j=5; j > i  ; j--) {
+	s += " ";
+	}
+	for(var k=1 ;  k <= i  ; k++){
+	s += "*";
+	}
+	s += "\n";
+}
+
+console.log(s);
+
+
+var s ="";
+
+for(var i=1; i <=5 ; i++) {
+	for(var j=1; j < i ; j++){
+	s += " ";
+	}
+	for(var k=5; k >= i ; k--){
+	s += "*";
+	}
+	s += "\n";
+}
+
+
+console.log(s);
+
+
+var s ="";
+
+for(var i = 0; i < 5 ; i++){
+	for(var j = 0 ; j < 4 - i ; j++) {
+			s +=" ";
+	}
+	for(var j = 0 ; j <= (i * 2) ; j++) {
+			s +="*";
+	}
+	s += "\n";
+}
+for(var i = 0; i < 4 ; i++){
+	for(var j = 0 ; j <= i ; j++) {
+			s +=" ";
+	}
+	for(var j = 0 ; j < 7 - (i * 2) ; j++) {
+			s +="*";
+	}
+	s += "\n";
+}
+
+console.log(s);
+	
+	
+		
+var s ="";
+
+for(var i = 0 ; i < 9; i++) {
+	for(var j = 0; j < 9; j++) { // 왼쪽위, 왼쪽 아래 <, 오른쪽 위 > , 오른쪽 아래 >= 
+		if(j < i - 4 || j < 4 - i || j >= 13 - i || j > 4 + i) {
+			s += " ";
+		} else {
+			s += "*";
+		}
+	}
+	s+= "\n";
+}
+
+console.log(s);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

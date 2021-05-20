@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+//선생님꺼
+
+var res = "1";
+var num = "";
+var cnt = 0;
+var temp = "";
+
+for(var z = 0; z<11; z++){
+   console.log((z+1)+"회  :" + res ); // (res.toString()); 문자열로 바꿔줌, 자동으로 콤마 찍어줌. method : 함수. 
+   num = res.charAt(0);
+   cnt = 1;
+   temp = "";
+   for(var x = 1; x<res.length; x++){
+      if(num == res.charAt(x)){
+         cnt++;
+      }else{
+         temp += "" + num + cnt;
+         num = res.charAt(x);
+         cnt = 1;
+      }
+   }
+   res = temp + num + cnt;
+}
+
+ 
+ 
+ var a= "1";
+ console.log(a);
+ for(var i = 0; i<10; i++){
+	 var q = 0;
+	 var w = a.charAt(0);
+	 var e = "";
+ for(var j = 0; j<a.length; j++){
+	 if(a.charAt(j) == w){
+		 q++;
+	 }else{
+		 e += w;
+		 e += q;
+		 q = 1;
+		 w= a.charAt(j);
+	 }
+ }
+ e= e+w;
+ e=  e + q;
+ a = e;
+ console.log(a);
+ 
+ }
+
+///////////////////////////////////////////////////////////////////////
+
+ var a="1";
+ console.log(a);
+ for(var i=0; i <10; i++){
+	 var count=0;
+	 var a1 = a.charAt(0);
+	 var result="";
+	 for(var j = 0; j < a.length; j++){
+		 if(a.charAt(j) == a1){
+			 count++;
+		 }else{
+			 result += a1;
+			 result += count;
+			 count = 1;
+			 a1 = a.charAt(j);
+		 }
+	 }
+	 result += a1;
+	 result += count;
+	 a = result;
+	 console.log(a);
+ }
+ 
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

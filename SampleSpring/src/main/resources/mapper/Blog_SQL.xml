@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Blog">
+	
+	
+	<select id = "getBlogCnt" parameterType = "hashmap" resultType = "Integer">
+	SELECT COUNT(*) AS CNT
+	FROM MEMBERS
+	WHERE 1 = 1
+	
+	</select>
+	
+	<select id = "getblogMembersList" parameterType = "hashmap" resultType = "hashmap">
+		SELECT M.MNM, M.MNO, M.MID
+		FROM (SELECT MNM, MNO, MID,
+				ROW_NUMBER() OVER(ORDER BY MNO DESC) AS RNUM
+			  FROM MEMBERS
+			  WHERE 1 = 1
+			  ) M
+		WHERE M.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	
+	<select id = "getblogMDetailCnt" parameterType = "hashmap" resultType = "Integer">
+		SELECT COUNT(*) AS CNT
+		FROM BLOG
+		WHERE 1 = 1
+		AND BLOG_DEL = 0
+		AND MNO = #{mno}
+	</select>
+	
+	<select id = "getblogMDetail" parameterType = "hashmap" resultType = "hashmap">
+		SELECT M.BLOG_NO, M.BLOG_TITLE, M.BLOG_HIT, M.BLOG_DT, M.MNO
+		FROM (SELECT BLOG_NO, BLOG_TITLE, BLOG_HIT, TO_CHAR(BLOG_DT, 'YYYY-MM-DD') AS BLOG_DT, MNO,
+				ROW_NUMBER() OVER(ORDER BY BLOG_NO DESC) AS RNUM
+			  FROM BLOG
+			  WHERE 1 = 1
+			  AND BLOG_DEL = 0
+			  AND MNO = #{mno}
+			  ) M
+		WHERE M.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+
+	<select id = "getBlogMDetailCon" parameterType = "hashmap" resultType = "hashmap">
+		SELECT BLOG_NO, BLOG_TITLE, BLOG_CON, BLOG_HIT, TO_CHAR(BLOG_DT, 'YYYY-MM-DD') AS BLOG_DT
+			  FROM BLOG
+			  WHERE 1 = 1
+			  AND BLOG_DEL = 0
+			  AND MNO = #{mno}
+			  AND BLOG_NO = #{blog_no}
+	</select>
+	
+	<update id = "addBlogHit" parameterType = "hashmap">
+		UPDATE BLOG SET
+		    BLOG_HIT = BLOG_HIT + 1
+		WHERE 1=1
+		    AND BLOG_NO = #{blog_no}
+	</update>
+	<insert id="blogAdd" parameterType="hashmap">
+      INSERT INTO BLOG(BLOG_NO, MNO, BLOG_TITLE, BLOG_CON)
+      VALUES(BLOG_SEQ.NEXTVAL, ${mno}, #{blog_title}, #{blog_con})
+   </insert>
+	<update id = "blogMUpdateAjax" parameterType = "hashmap">
+		UPDATE BLOG SET
+		    BLOG_TITLE = #{blog_title},
+		    BLOG_CON = #{blog_con}
+		WHERE 1=1
+		    AND BLOG_NO = #{blog_no}
+	</update>
+	<update id="blogDelete" parameterType="hashmap">
+		UPDATE BLOG SET BLOG_DEL = 1
+		WHERE BLOG_NO = #{blog_no}
+	</update>
+</mapper>
+
+
+
+
+
+
+

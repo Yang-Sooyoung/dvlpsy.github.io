@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>25~118 사이의 소수를 제외한 숫자를 출력하시오.</title>
+<script type="text/javascript">
+//내가 소수가 아니다 할때만 출력
+for(var i = 25; i <= 118; i++) { // 25~118까지 반복 , 비교
+ 	for(var j = 2; j < i; j++) { // 소수가 아닌 최소값으로 해야함. 한번씩 다 나눠봐서
+ 		if(i % j == 0) { //  i(범위)에서 j(조건)을 나눈 나머지가 0일때, 소수가 아닐때
+ 			console.log(i);  // i 출력
+ 			break; // 멈춤
+ 		}
+ 	}
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

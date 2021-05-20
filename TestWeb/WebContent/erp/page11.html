@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>휴가코드 조회 화면</title>
+<link rel="stylesheet" type="text/css" href="./css/common/main.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/board.css" />
+<style type="text/css">
+/* 검색영역 가로변경 시 */
+.default_search_area {
+	width: 500px;
+}
+/* 목록영역 가로변경 시 */
+.default_board {
+	width: 500px;
+}
+</style>
+</head>
+<body>
+	<!-- Top Bar -->
+	<div class="top_area">
+		<div class="logo"></div>
+		<div class="top_menu_area">
+			<div class="top_menu">
+				<div class="top_menu_txt">Groupware</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">HR</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">Sales</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">CRM</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">EIS</div>
+			</div>
+		</div>
+		<div class="info_area">
+			<div class="info_wrap">
+				<div class="photo">
+					<img alt="사진" src="./images/sample/photo.jpg">
+				</div>
+				<div class="info_txt">
+					인사<br/>부장 인부장
+				</div>
+				<div class="top_option_btn"></div>
+				<div class="top_noti_btn">
+					<div class="noti_cnt_on">3</div>
+				</div>
+				<div class="logout_btn">
+					<div class="logout_btn_txt">로그아웃</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Left Menu -->
+	<div class="left_area">
+		<div class="menu1_title">
+			<div class="menu1_txt">HR</div>
+		</div>
+		<div class="menu2_wrap">
+			<div class="menu2_title">
+				<div class="menu2_txt">근태관리</div>
+			</div>
+		</div>
+		<div class="menu2_wrap_on">
+			<div class="menu2_title">
+				<div class="menu2_txt">연차관리</div>
+			</div>
+		<div class="menu3_wrap">
+			<div class="menu3_title_on">
+				<div class="menu3_txt">휴가코드관리</div>
+			</div>
+			<div class="menu3_title">
+				<div class="menu3_txt">연차생성관리</div>
+			</div>
+			<div class="menu3_title">
+				<div class="menu3_txt">연차사용관리</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- Contents -->
+	<div class="contents_area">
+		<div class="gnb">
+			<div class="gnb_txt">Home > HR > 연차관리 > 휴가코드관리</div>
+		</div>
+		<div class="contents_header">
+			<div class="contents_header_txt">휴가코드 조회</div>
+		</div>
+		<div class="contents">
+			<!-- 여기에 내용을 작성하시오. -->
+			<div class="default_search_area">
+				<select>
+					<option>휴가코드명</option>
+					<option>휴가코드설명</option>
+				</select> <input type="text" placeholder="검색어를 입력해주세요." />
+				<div class="search_btn_area">
+					<input type="button" value="검색" />
+					<input type="button" value="등록" onclick="window.open('http://localhost:8090/TestWeb/erp/page13.html','휴가코드 등록')" />
+				</div>
+			</div>
+			<div class="default_board">
+				<table>
+					<colgroup>
+						<col width="100px" />
+						<col width="150px" />
+						<col width="250px" />
+					</colgroup>
+					<thead>
+						<tr class="top">
+							<th>No</th>
+							<th>휴가코드명</th>
+							<th>휴가코드설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page12.html','휴가코드 상세조회')">1</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page12.html','휴가코드 상세조회')">B01</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page12.html','휴가코드 상세조회')">유급휴가</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>B02</td>
+							<td>반차휴가</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>B03</td>
+							<td>무급휴가</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="page_wrap">
+					<div class="page_nation">
+						<div class="arrow prev"></div>
+						<div class="page_on">1</div>
+						<div class="page">2</div>
+						<div class="page">3</div>
+						<div class="page">4</div>
+						<div class="page">5</div>
+						<div class="arrow next"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="members">
+	<select id="getMemberCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM MEMBERS
+		WHERE 1 = 1
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn == 0">
+					AND MID LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn == 1">
+					AND MNM LIKE '%' || #{searchTxt} || '%'	
+				</when>
+			</choose>
+		</if>
+	</select>
+	
+	<select id="getMemberList" parameterType="hashmap" resultType="hashmap">
+		SELECT M.MNO, M.MID, M.MNM, JOINDT
+		FROM (SELECT MNO, MID, MNM, TO_CHAR(JOINDT, 'YYYY-MM-DD') AS JOINDT,
+		             ROW_NUMBER() OVER(ORDER BY MNO DESC) AS RNUM
+		      FROM MEMBERS
+		      WHERE 1 = 1
+		      	<if test="searchTxt != null and searchTxt != ''">
+					<choose>
+						<when test="searchGbn == 0">
+							AND MID LIKE '%' || #{searchTxt} || '%'
+						</when>
+						<when test="searchGbn == 1">
+							AND MNM LIKE '%' || #{searchTxt} || '%'	
+						</when>
+					</choose>
+				</if>
+		      ) M
+		WHERE M.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	
+	<select id="getMember" parameterType="hashmap" resultType="hashmap">
+		SELECT MNO, MID, MPW, MNM, TO_CHAR(MBIRTH, 'YYYY-MM-DD') AS MBIRTH,
+			   MHOBBY, TO_CHAR(JOINDT, 'YYYY-MM-DD') AS JOINDT
+		FROM MEMBERS
+		WHERE MNO = #{mno}
+	</select>
+	
+	<insert id="memberAdd" parameterType="hashmap">
+		INSERT INTO MEMBERS(MNO, MID, MPW, MNM, MBIRTH, MHOBBY)
+		VALUES (MEMBERS_SEQ.NEXTVAL, #{mid}, #{mpw}, #{mnm}, #{mbirth}, #{mhobby})
+	</insert>
+	
+	<update id="memberUpdate" parameterType="hashmap">
+		UPDATE MEMBERS SET MNM = #{mnm},
+		                   <if test="mpw != null and mpw != ''">
+		                   MPW = #{mpw},
+		                   </if>
+		                   MBIRTH = #{mbirth},
+		                   MHOBBY = #{mhobby}
+		WHERE MNO = #{mno}
+	</update>
+	
+	<delete id="memberDelete" parameterType="hashmap">
+		DELETE FROM MEMBERS
+		WHERE MNO = #{mno}
+	</delete>
+	
+	<select id="getLoginInfo" parameterType="hashmap" resultType="hashmap">
+	SELECT MNO, MNM, CASE WHEN MPW = #{mpw}
+                      THEN 'TRUE'
+                      ELSE 'FALSE'
+                 END AS MPW_RES
+	FROM MEMBERS
+	WHERE MID = #{mid}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

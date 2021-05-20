@@ -1,0 +1,60 @@
+@CHARSET "EUC-KR";
+body {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.bg_div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #000000;
+	opacity:0.3;
+	z-index: 100;
+}
+
+.popup_div {
+	display: inline-block;
+	width: 300px;
+	height: 250px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -125px;
+	margin-left: -150px;
+	background-color: #FFFFFF;
+	border: 2px solid #992299;
+	z-index: 1000;
+}
+
+.popup_title {
+	line-height:40px;
+	height: 40px;
+	background-color: #992299;
+}
+
+.popup_title_text {
+	padding-left: 5px;
+	color: #FFFFFF;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+.popup_contents {
+	height: 206px;
+}
+.popup_text {
+	height: 156px;
+	text-align: center;
+	white-space: pre-line;
+	overflow-y: auto;
+	padding: 5px;
+}
+.popup_btn {
+	height: 30px;
+	text-align: center;
+}
+
+.btn_ok {
+	width: 250px;
+	height: 25px;
+}

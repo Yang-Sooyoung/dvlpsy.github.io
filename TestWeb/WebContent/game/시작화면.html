@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html, body {
+	margin: 0;
+	font-size: 0pt;
+	width: 100%;
+	height: 100%;
+}
+
+.wrap {
+	width: 100%;
+	position: absolute;
+	top: calc(50% - 360px); 
+}
+
+.img_wrap {
+	width: 1280px;
+	height: 720px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.start_wrap {
+	width: 1280px;
+	height: 720px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.start_bg {
+	background-image: url("./image/bg.png");
+	position: relative;
+	width: 1280px;
+	height: 720px;
+	position: relative;
+	margin: 0 auto;
+}
+.start_btn {
+ 	background-image: url("./image/start_btn.png");
+	background-size: contain;
+ 	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 380px;
+	left: 540px;
+	h-over: pointer;
+	padding: 0;
+}
+
+.bg_img {
+	background-image: url("./image/bg.png");
+	width: 1280px;
+	height: 720px;
+	position: relative;
+	margin: 0 auto;
+}
+
+</style>
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {  //준비가 되면 함수를 시작하겠다.
+	$("#start_btn").click(function() { //start 버튼 클릭시, 기능 실행
+		alert("제한시간 안에 폭탄을 해제하고 무사히 방을 탈출하자!");	
+		$(".start_bg").fadeOut(100);
+		$(".start_btn").fadeOut(100);
+		$(".key1").fadeOut(100);
+		location.href = '방탈출.html';
+	}); //여백 쪼끔 튀어나옴
+});
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<div class="img_wrap">
+		<div class="start_wrap">
+			<div class="start_bg">
+		 	<img src="./image/start_btn.png" alt="start_btn" id="start_btn" class="start_btn">
+		</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>

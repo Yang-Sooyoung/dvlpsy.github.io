@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Warcraft tower defense</title>
+    <!-- 웹폰트 링크 -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- 맵 스타일 파일 -->
+    <link rel="stylesheet" type="text/css" href="./css/default.css" />
+
+    <!-- 제이쿼리 파일 -->
+    <script type="text/javascript" src="./jquery/jquery-1.12.4.js"></script>
+    <!--js 파일 -->
+    <script type="text/javascript" src="./js/main.js"></script>
+</head>
+<body>
+    <div class="all_wrap">
+        <div class="left_wrap">
+            <div class="map_table">
+                <table>
+                    <tbody id="coor">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right_wrap">
+            <div class="menu">
+                <div class="round">
+                    <div class="roundcnt">ROUND1</div>
+                </div>
+                <div id="time">
+                    <span class="minute"></span>:<span class="second"></span>
+                </div>
+                <div class="character">
+                    <table class="char_table">
+                        <thead>Character</thead>
+                        <tbody class="cc">
+                            <tr>
+                                <td class="tt">
+                                    <div class="btnC" id="0">
+                                        <img src="./images/tower_img/warrior.png" alt="" />
+                                        <span class="btn_txt">WARRIOR</span><br />
+                                        <span class="btn_txt">10 $</span><br />
+                                        <span class="btn_txt">1 block</span>
+                                    </div>
+                                </td>
+                                <td class="tt">
+                                    <div class="btnC" id="1">
+                                        <img src="./images/tower_img/ranger.png" alt="" />
+                                        <span class="btn_txt">RANGER</span><br />
+                                        <span class="btn_txt">20 $</span><br />
+                                        <span class="btn_txt">2 block</span>
+                                    </div>
+                                </td>
+                                <td class="tt">
+                                    <div class="btnC" id="2">
+                                        <img src="./images/tower_img/rogue.png" alt="" />
+                                        <span class="btn_txt">ROGUE</span><br />
+                                        <span class="btn_txt">50 $</span><br />
+                                        <span class="btn_txt">1 block</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tt">
+                                    <div class="btnC" id="3">
+                                        <img src="./images/tower_img/cleric.png" alt="" />
+                                        <span class="btn_txt">CLERIC</span><br />
+                                        <span class="btn_txt">120 $</span><br />
+                                        <span class="btn_txt">2 block</span>
+                                    </div>
+                                </td>
+                                <td class="tt">
+                                    <div class="btnC" id="4">
+                                        <img src="./images/tower_img/wizard.png" alt="" />
+                                        <span class="btn_txt">WIZARD</span><br />
+                                        <span class="btn_txt">200 $</span><br />
+                                        <span class="btn_txt">3 block</span>
+                                    </div>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="gold">Gold : 50</div>
+                <div class ="life">LIFE : 10</div>
+                <div id = "checkWrap">
+                    <input type = "checkbox" id= "checkbtn"/>
+                    <label for="checkbtn" class="lb_txt">Make Grid</label>
+                </div>
+                <div class="start">
+                    <div id="startBtn">START</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

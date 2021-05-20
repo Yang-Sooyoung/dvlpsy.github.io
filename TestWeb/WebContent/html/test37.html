@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function num(obj) { 
+	var t =document.getElementById("txt");
+			//문서=HTML .=~안에 있는   Id가 txt인 것
+	if(t.value == "0") {
+		t.value = obj.value;
+	} else {
+		t.value += obj.value;
+	}
+}
+</script>
+</head>
+<body>
+<input type="text" id="txt" value="0" readonly="readonly" />
+<input type="button" value="1" onclick="num(this);"/> 
+							<!--this: 버튼에 대한 정보가 넘어감.-->
+</body>
+</html>

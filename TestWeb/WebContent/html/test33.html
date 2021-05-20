@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+var str = "사과,복숭아,하품,망고";
+// 값.split(값1) : 값에서 값1을 기준으로 분할하여 배열로 변환한다.
+var a = str.split(",");
+
+console.log(a);
+ */
+var a1 = new Array();
+var a2 = new Array();
+var count = 1;
+var q = 0;
+var w = 0;
+a1[0] = 1;
+var temp = 0;
+console.log("0번째:"+a1[0]);
+for(var i = 0; i<10; i++){
+   for(var j = 1; j<a1.length; j++){
+      if(a1[q] == a1[j]){
+         count++;
+      }
+   else{
+      a2[w] = a1[q];
+       a2[w+1] = count;
+       count = 1;
+       
+       w +=2;
+       q = j;
+  	 }
+   }
+a2[w] = a1[q];
+a2[w+1] = count;
+count = 1;
+q=0;
+w=0;
+for(var k = 0; k<a2.length; k++){
+   a1[k] = a2[k];
+}
+console.log(i+1+"번째:"+a1);
+}
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

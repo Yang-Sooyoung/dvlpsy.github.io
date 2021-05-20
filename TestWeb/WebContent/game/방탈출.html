@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html, body {
+	margin: 0;
+	font-size: 0pt;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.wrap {
+	width: 100%;
+	position: absolute;
+	top: calc(50% - 360px);
+}
+
+.img_wrap {
+
+	width: 1280px;
+	height: 720px;
+	position: relative;
+	margin: 0 auto;
+}
+.bg_img {
+	background-image: url("./image/bg.png");
+	width: 1280px;
+	height: 720px;
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	z-index: 50;
+}
+
+.mc {
+	display: inline-block;
+	width: 300px;
+	height: 100px;
+	margin-top: 150px;
+	margin-left: 350px;
+	z-index: 100;
+}
+
+.card_ex {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-image: url("./image/card_ex.png");
+}
+
+.memo {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-image: url("./image/memo.png");
+}
+
+.switch {
+	display: inline-block;
+	vertical-align: top;
+	background-size: cover;
+	width: 60px;
+	height: 110px;
+	background-image: url("./image/switch.png");
+	margin-left: 50px;
+	z-index: 100;
+}
+
+.desk {
+	display: inline-block;
+	vertical-align: top;
+	background-size: contain;
+	width: 680px;
+	height: 300px;
+	background-image: url("./image/desk.png");
+	position: absolute;
+	top: 310px;
+	left: 260px;
+	z-index: 100;
+}
+
+.doll {
+	display: inline-block;
+	vertical-align: bottom;
+	width: 99px;
+	height: 150px;
+	background-image: url("./image/doll.png");
+	background-size: cover;
+	z-index: 100;
+	position: absolute;
+	top: 450px;
+	left: 170px;
+	background-repeat: no-repeat;
+}
+
+.bomb {
+	display: inline-block;
+	vertical-align: bottom;
+	background-size: contain;
+	width: 150px;
+	height: 150px;
+	background-image: url("./image/bomb.png");
+	position: absolute;
+	top: 450px;
+	left: 915px;
+	z-index: 150;
+}
+
+.lug {
+	display: inline-block;
+	vertical-align: top;
+	width: 851px;
+	height: 194px;
+	background-image: url("./image/lug.png");
+	position: absolute;
+	top: 545px;
+	left: 100px;
+	z-index: 50;
+}
+
+.door {
+	display: inline-block;
+	vertical-align: top;
+	width: 457px;
+	height: 658px;
+	background-image: url("./image/door.png");
+	position: absolute;
+	top: 65px;
+	left: 960px;
+	z-index: 100;
+}
+
+.money {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	height: 150px;
+	background-size: contain;
+	background-image: url("./image/money.png");
+	position: absolute;
+	top: 555px;
+	left: 65px;
+	z-index: 100;
+}
+
+.lock1 {
+	display: inline-block;
+	vertical-align: top;
+	width: 50px;
+	height: 50px;
+	background-size: contain;
+	background-image: url("./image/lock1.png");
+	position: absolute;
+	top: 390px;
+	left: 862px;
+	z-index: 100;
+}
+
+.lock1_open {
+	display: none;
+	vertical-align: top;
+	width: 50px;
+	height: 50px;
+	background-size: contain;
+	background-image: url("./image/lock1_open.png");
+	z-index: 110;
+	position: absolute;
+	top: 390px;
+	left: 862px;
+}
+
+.lock2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 50px;
+	height: 50px;
+	background-size: contain;
+	background-image: url("./image/lock2.png");
+	position: absolute;
+	top: 540px;
+	left: 862px;
+	z-index: 100;
+}
+
+.lock2_open {
+	display: none;
+	vertical-align: top;
+	width: 50px;
+	height: 50px;
+	background-size: contain;
+	background-image: url("./image/lock2_open.png");
+	z-index: 110;
+	position: absolute;
+	top: 530px;
+	left: 845px;
+}
+
+.key1 {
+	display: inline-block;
+	vertical-align: top;
+	width: 35px;
+	height: 80px;
+	background-size: contain;
+	background-image: url("./image/key1.png");
+	z-index: 90;
+	position: absolute;
+	top: 495px;
+	left: 225px;
+}
+/* 폭탄  */
+.bombcountdown {
+	display: inline-block;
+	vertical-align: bottom;
+	background-size: contain;
+	width: 60px;
+	height: 40px;
+	position: absolute;
+	top: 522px;
+	left: 953px;
+	z-index: 200;
+	vertical-align: bottom;
+}
+.countdown{
+	color: red;
+	font-size:36px;
+	vertical-align: middle;
+	margin-top: 7px;
+}
+.bomb_popup, .bomb_bg {
+	display: inline-block;
+	position: absolute;
+	z-index: 200;
+}
+
+.bomb_popup {
+	display: none;
+	background-color: brown;
+	background-size: contain;
+	top: calc(50% - 300px);
+	left: calc(50% - 300px);
+	width: 600px;
+	height: 600px;
+	background-image: url("./image/bomb_2.png");
+	z-index: 350;
+}
+
+.bomb_bg {
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+}
+
+.bomb_close {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 20px;
+	left: 540px;
+	text-align: center;
+	font-size: 18pt;
+	cursor: pointer;
+	z-index: 200;
+}
+
+.bomb_num {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 407px;
+	z-index: 200;
+}
+
+.bomb_pw_1, .bomb_pw_2, .bomb_pw_3, .bomb_pw_4 {
+	display: inline-block;
+	vertical-align: top;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #000;
+	margin-left: 75px;
+	font-size: 17pt;
+	text-align: center;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+.bomb_ok {
+	width: 50px;
+	height: 30px;
+	position: absolute;
+	top: 458px;
+	left: 256px;
+	font-size: 16pt;
+	background-color: #7ba9e0;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+/* 폭탄  */
+/* 팝업  */
+.key1_1 {
+	display: none;
+	vertical-align: top;
+	width: 30px;
+	height: 72px;
+	background-size: contain;
+	background-image: url("./image/key1.png");
+	z-index: 300;
+	margin-left: 20px;
+}
+
+.card1_1 {
+	display: none;
+	vertical-align: top;
+	width: 70px;
+	height: 70px;
+	background-size: contain;
+	background-image: url("./image/card1.png");
+	z-index: 300;
+	top: 525px;
+	left: 505px;
+	margin-left: 20px;
+}
+
+.card2_1 {
+	display: none;
+	vertical-align: top;
+	width: 70px;
+	height: 70px;
+	background-size: contain;
+	background-image: url("./image/card2.png");
+	z-index: 300;
+	top: 525px;
+	left: 605px;
+	margin-left: 20px;
+}
+
+.mirror_1 {
+	display: none;
+	vertical-align: top;
+	width: 70px;
+	height: 70px;
+	background-size: contain;
+	background-image: url("./image/mirror.png");
+	z-index: 300;
+	top: 525px;
+	left: 705px;
+	margin-left: 20px;
+}
+
+.door_key_1 {
+	display: none;
+	vertical-align: top;
+	width: 37px;
+	height: 70px;
+	background-size: contain;
+	background-image: url("./image/door_key.png");
+	z-index: 300;
+	margin-left: 20px;
+}
+
+.popup {
+	position: absolute;
+	background-color: #795548;
+	top: calc(50% - 250px);
+	left: calc(50% - 250px);
+	width: 500px;
+	height: 500px;
+	z-index: 200;
+	opacity: 0.8;
+	display: none;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.close {
+	display: table-cell;
+	background-color: white;
+	float: right;
+	width: 20px;
+	height: 20px;
+	z-index: 210;
+	opacity: 0.8;
+	margin-top: 10px;
+	margin-right: 10px;
+	color: black;
+	text-size: 13px;
+	text-align: center;
+}
+
+.big {
+	display: block;
+	background-color: white;
+	vertical-align: top;
+	width: 480px;
+	height: 360px;
+	z-index: 150;
+	opacity: 0.8;
+	margin-top: 35px;
+	margin-left: 10px;
+}
+
+.list {
+	display: inline-block;
+	background-color: white;
+	vertical-align: top;
+	width: 480px;
+	height: 80px;
+	z-index: 150;
+	opacity: 0.8;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+/* 팝업 */
+
+/* 자물쇠 팝업  */
+#popupDiv {
+	position: absolute;
+	top: 80px;
+	left:100px;
+	width: 300px;
+	height: 300px;
+	display: none;
+	z-index: 300;
+	background-image: url("./image/lock1.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #FFFFFF;
+}
+
+#popupDiv2 {
+	position: absolute;
+	top: 80px;
+	left:100px;
+	width: 300px;
+	height: 300px;
+	display: none;
+	z-index: 300;
+	background-image: url("./image/lock2.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.lock_num {
+	font-size: 18pt;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.lock_pw_1 {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #000000;
+	z-index: 200;
+	margin-right: 20px;
+	color: black;
+}
+
+.lock_pw_2 {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #000000;
+	z-index: 200;
+	margin-right: 40px;
+	color: black;
+}
+
+.lock_pw_3 {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #000000;
+	z-index: 200;
+	margin-right: 60px;
+	color: black;
+}
+
+.lock_pw_4 {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #000000;
+	z-index: 200;
+	margin-right: 80px;
+	color: black;
+}
+
+.popup_ok {
+	width: 50px;
+	height: 30px;
+	position: absolute;
+	left: 280px;
+	font-size: 16px;
+	background-color: #7ba9e0;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+/* 자물쇠 팝업  */
+/* 금고 러그 */
+.card_ex {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-image: url("./image/card_ex.png");
+	cursor: pointer;
+}
+
+.lug {
+	display: inline-block;
+	vertical-align: top;
+	width: 851px;
+	height: 194px;
+	background-image: url("./image/lug.png");
+	z-index: 50;
+	position: absolute;
+	top: 545px;
+	left: 200px;
+	cursor: pointer;
+}
+
+.lug_roll {
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 150px;
+	background: url("./image/lug_roll.png") no-repeat center center;
+	background-size: contain;
+	z-index: 30;
+	position: absolute;
+	top: 560px;
+	left: 500px;
+	cursor: pointer;
+}
+.card1 {
+	display: none;
+	vertical-align: top;
+	width: 50px;
+	height: 50px;
+	background-image: url("./image/card1.png");
+	background-size:contain;
+	top: 550px;
+	left: 880px;
+	z-index: 105;
+	position: absolute;
+	cursor: pointer;
+}
+.card2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+	height: 100px;
+	background-image: url("./image/card2.png");
+	top: 590px;
+	left: 750px;
+	z-index: 25;
+	position: absolute;
+	cursor: pointer;
+}
+
+.door {
+	display: inline-block;
+	vertical-align: top;
+	width: 457px;
+	height: 658px;
+	background-image: url("./image/door.png");
+	background-size: contain;
+	z-index: 110;
+	position: absolute;
+	top: 65px;
+	left: 960px;
+	cursor: pointer;
+}
+.door_2 {
+	display: none;
+	vertical-align: top;
+	width: 457px;
+	height: 658px;
+	background-image: url("./image/door.png");
+	background-size: contain;
+	z-index: 110;
+	position: absolute;
+	top: 65px;
+	left: 960px;
+	cursor: pointer;
+}
+
+.money {
+	display: inline-block;
+	vertical-align: top;
+	width: 130px;
+	height: 130px;
+	background-size: contain;
+	background-image: url("./image/money.png");
+	z-index: 100;
+	position: absolute;
+	top: 555px;
+	left: 65px;
+	cursor: pointer;
+}
+
+.money_open {
+	display: none;
+	vertical-align: top;
+	width: 130px;
+	height: 110px;
+	background-size: contain;
+	background-image: url("./image/money_open.png");
+	z-index: 100;
+	position: absolute;
+	top: 560px;
+	left: 65px;
+	cursor: pointer;
+}
+
+.money_close {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 20px;
+	left: 540px;
+	text-align: center;
+	font-size: 18pt;
+	cursor: pointer;
+}
+
+.door_key {
+	display: none;
+	vertical-align: top;
+	width: 37px;
+	height: 70px;
+	background-size: contain;
+	background-image: url("./image/door_key.png");
+	z-index: 120;
+	position: absolute;
+	top: 580px;
+	left: 126px;
+	cursor: pointer;
+}
+/* 금고 러그 */
+/* 금고팝업  */
+.money_popup, .bg {
+	display: none;
+	position: absolute;
+}
+
+.money_popup {
+	display: none;
+	background-color: white;
+	top: calc(50% - 300px);
+	left: calc(50% - 300px);
+	width: 600px;
+	height: 600px;
+	z-index: 150;
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 50;
+}
+
+.money_num {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 250px;
+}
+
+.money_pw_1, .money_pw_2, .money_pw_3, .money_pw_4 {
+	display: inline-block;
+	vertical-align: top;
+	width: 50px;
+	height: 40px;
+	border: 1px solid #000;
+	margin-left: 75px;
+	font-size: 17pt;
+	text-align: center;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+.money_ok {
+	width: 50px;
+	height: 30px;
+	position: absolute;
+	top: 400px;
+	left: 500px;
+	font-size: 16pt;
+	background-color: #7ba9e0;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+/* 금고팝업  */
+/* 스위치, 메모  */
+.switch {
+	display: block;
+	vertical-align: top;
+	background-size: contain;
+	width: 63px;
+	height: 110px;
+	background-image: url("./image/switch.png");
+	margin-left: 50px;
+	z-index: 50;
+}
+
+.switch_off {
+	display: none;
+	vertical-align: top;
+	background-size: cover;
+	width: 100px;
+	height: 110px;
+	background-image: url("./image/swith_off.png");
+	z-index: 50;
+	position: absolute;
+	top: 245px;
+	left: 27px;
+}
+
+.memo {
+	display: block;
+	width: 100px;
+	height: 100px;
+	background-image: url("./image/memo.png");
+	position: absolute;
+	top: 150px;
+	left: 435px;
+	cursor: pointer;
+}
+.memo_2 {
+	display: block;
+	width: 100px;
+	height: 100px;
+	background-image: url("./image/memo.png");
+	position: absolute;
+	top: 150px;
+	left: 435px;
+}
+
+.memo_popup, .memo_bg_img {
+	display: inline-block;
+	position: absolute;
+	display: none;
+}
+
+.memo_popup {
+	background-color: #5D5D5D;
+	top: calc(50% - 300px);
+	left: calc(50% - 300px);
+	width: 0px;
+	height: 0px;
+	z-index: 100;
+}
+
+.memo_bg_img {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	top: 0px;
+	left: 0px;
+	opacity: 0.7;
+	z-index: 50;
+}
+
+.bg_img {
+	background-image: url("./image/bg.png");
+	width: 1280px;
+	height: 720px;
+}
+
+#back {
+	width: 50px;
+	height: 50px;
+	opacity: 0.8;
+	z-index: 110;
+	position: absolute;
+	top: 120px;
+	left: 340px;
+}
+
+#memo {
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	top: 110px;
+	left: 127px;
+	z-index: 100;
+}
+
+.memo_password1 {
+	font-size: 50px;
+	position: absolute;
+	top: 220px;
+	left: 235px;
+	opacity: 0.3;
+	z-index: 110;
+}
+
+.memo_password2 {
+	font-size: 50px;
+	position: absolute;
+	top: 330px;
+	left: 210px;
+	opacity: 0.3;
+	z-index: 110;
+}
+
+.memo_password3 {
+	font-size: 50px;
+	position: absolute;
+	top: 313px;
+	left: 273px;
+	opacity: 0.3;
+	z-index: 110;
+}
+
+.memo_password4 {
+	font-size: 50px;
+	position: absolute;
+	top: 350px;
+	left: 300px;
+	opacity: 0.3;
+	z-index: 110;
+}
+/* 스위치, 메모  */
+/* 거울, 팝업  */
+.mirror_popup, .mirror_bg {
+	display: inline-block;
+	position: absolute;
+}
+.mirror_popup {
+	display: none;
+	background-color: #dee0e347;
+	top: calc(50% - 250px);
+	left: calc(50% - 250px);
+	width: 500px;
+	height: 500px;
+	z-index: 100;
+	border-radius:10px;
+
+}
+.mirror_bg_img {
+	display: none;
+	background-image: url("./image/mirror_bg.png");
+	width: 1280px;
+	height: 720px;
+	z-index: 100;
+}
+.mirror{
+	display: none;
+ 	width: 50px;
+ 	height: 50px;
+	position: absolute;
+	top: 370px;
+	left: 835px;
+	z-index: 100;
+	background-image: url("./image/mirror.png");
+	background-size: contain;
+}
+.mirror_2{
+	display: none;
+ 	width: 390px;
+ 	height: 350px;
+	z-index: 100;
+	background-image: url("./image/mirror.png");
+	background-size: contain;
+	position: absolute;
+	margin-left: 65px;
+}
+.mirror_count{
+	display: none;
+    font-size: 30px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    color: #C2E2E8;
+    z-index: 150;
+	opacity: 0.5;
+}
+#back{
+	display: none;
+    width:50px;
+    height:50px;
+    position: absolute;
+    top: 0px;
+	left: 444px;
+	opacity: 0.8;
+	z-index: 150;
+}
+#popupDiv4{
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	display: none;
+	z-index: 300;
+	background-image: url("./image/door_keyhole.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	left: 100px;
+}
+/* 거울, 팝업  */
+</style>
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+<script type="text/javascript"
+	src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() { //준비가 되면 함수를 시작하겠다.
+		$(".start_btn").click(function() { //start 버튼 클릭시, 기능 실행
+			alert("제한시간 안에 폭탄을 해제하고 무사히 방을 탈출하자!");
+			$(".start_bg").fadeOut(100);
+			$(".start_btn").fadeOut(100);
+			$(".bg_img").css("display", "block");
+			//location.href = '방탈출.html';
+		});
+		$("#doll").click(function() { //start 버튼 클릭시, 기능 실행
+			$(".doll").animate({
+				"left" : "100px"
+			}, "slow");
+			$(".key1").attr("z-index", "300"); // 제트인덱스 안돼서 잘 안눌림
+			/* location.href = '열쇠획득.html'; */
+		});
+		$("#key1").click(function() {
+			$(".key1").fadeOut(100);
+			$(".key1_1").css("display", "inline-block");
+		});
+		$("#lock1").click(function lock(obj) {
+			$('.popup').fadeIn(100);
+		});
+		$("#lock2").click(function lock(obj) {
+			$('.popup').fadeIn(100);
+		});
+		$("#close").click(function lock(obj) {
+			$('.popup').fadeOut(100);
+		});
+	});
+
+	/* 폭탄  */
+	var count = 120;
+
+	var countdown = setInterval(function() {
+		$(".countdown").html(+ count);
+
+		if (count == 0) {
+			clearInterval(countdown);
+			alert("사망");
+			location.reload();
+		}
+		count--;
+	}, 1000);
+
+	$(document).ready(function() {
+		$(".bomb_bg").hide();
+		$(".bomb_popup").hide();
+
+		$(".bomb").on("click", function() {
+			$(".bomb_bg").show();
+			$(".bomb_popup").show();
+		});
+
+		$(".bomb_close").on("click", function() {
+			$(".bomb_bg").hide();
+			$(".bomb_popup").hide();
+		});
+
+		$(".bomb_pw_1").on("click", function() {
+			var pw_1 = $(".bomb_pw_1").html();
+			pw_1++;
+
+			if (pw_1 == 10) {
+				pw_1 = 0;
+			}
+			$(".bomb_pw_1").html(pw_1);
+		});
+
+		$(".bomb_pw_2").on("click", function() {
+			var pw_2 = $(".bomb_pw_2").html();
+			pw_2++;
+
+			if (pw_2 == 10) {
+				pw_2 = 0;
+			}
+			$(".bomb_pw_2").html(pw_2);
+		});
+
+		$(".bomb_pw_3").on("click", function() {
+			var pw_3 = $(".bomb_pw_3").html();
+			pw_3++;
+
+			if (pw_3 == 10) {
+				pw_3 = 0;
+			}
+			$(".bomb_pw_3").html(pw_3);
+		});
+
+		$(".bomb_pw_4").on("click", function() {
+			var pw_4 = $(".bomb_pw_4").html();
+			pw_4++;
+
+			if (pw_4 == 10) {
+				pw_4 = 0;
+			}
+			$(".bomb_pw_4").html(pw_4);
+		});
+
+		$(".bomb_ok").on("click", function() {
+			var pw_1 = $(".bomb_pw_1").html();
+			var pw_2 = $(".bomb_pw_2").html();
+			var pw_3 = $(".bomb_pw_3").html();
+			var pw_4 = $(".bomb_pw_4").html();
+			if ((pw_1 == 8) && (pw_2 == 5) && (pw_3 == 2) && (pw_4 == 4)) {
+				clearInterval(countdown);
+				$(".bomb_bg").hide();
+				$(".bomb_popup").hide();
+
+			}
+			else{
+				location.href="end.html";
+			}
+		});
+	});
+	/* 폭탄  */
+
+	/* 금색 자물쇠  */
+	$(function() {
+
+		$(".lock_pw_1").on("click", function() {
+			var pw_1 = $(".lock_pw_1").html();
+			pw_1++;
+
+			if (pw_1 == 10) {
+				pw_1 = 0;
+			}
+			$(".lock_pw_1").html(pw_1);
+		});
+
+		$(".lock_pw_2").on("click", function() {
+			var pw_2 = $(".lock_pw_2").html();
+			pw_2++;
+
+			if (pw_2 == 10) {
+				pw_2 = 0;
+			}
+			$(".lock_pw_2").html(pw_2);
+		});
+
+		$(".lock_pw_3").on("click", function() {
+			var pw_3 = $(".lock_pw_3").html();
+			pw_3++;
+
+			if (pw_3 == 10) {
+				pw_3 = 0;
+			}
+			$(".lock_pw_3").html(pw_3);
+		});
+
+		$(".lock_pw_4").on("click", function() {
+			var pw_4 = $(".lock_pw_4").html();
+			pw_4++;
+
+			if (pw_4 == 10) {
+				pw_4 = 0;
+			}
+			$(".lock_pw_4").html(pw_4);
+		});
+		$(".key1_1").draggable();
+		$("#popupDiv2").droppable({
+			drop : function(event, ui) {
+				$('.lock2').css('display','none');
+				$('.lock2_open').css('display','inline-block');
+				$('.popup').css('display','none');
+				$(".key1_1").css('display','none');
+				$(".card1").css("display", "block");
+			}
+		});
+		/* 금색 자물쇠  */
+		/* 은색 자물쇠  */
+		$('.lock1').click(
+				function() {
+					
+					
+					$("#popupDiv").css("display", "block");
+					$('#popupDiv2').css('display', 'none');
+					$('#popupDiv3').css('display', 'none');
+					$('#popupDiv4').css('display', 'none');
+					$(".money_popup").css("display", "none");
+					$(".bomb_popup").css("display", "none");
+
+					$("body").css("overflow", "hidden");
+				});
+		$(".popup_ok").on("click", function() {
+			var pw_1 = $(".lock_pw_1").html();
+			var pw_2 = $(".lock_pw_2").html();
+			var pw_3 = $(".lock_pw_3").html();
+			var pw_4 = $(".lock_pw_4").html();
+			if ((pw_1 == 8) && (pw_2 == 2) && (pw_3 == 8) && (pw_4 == 2)) {
+
+				$('#popupDiv').css("display", "none");
+				$('.popup').css("display", "none");
+				$('.lock1_open').fadeIn();
+				$('.lock1').fadeOut();
+				$('.mirror').fadeIn();
+
+			}
+		});
+		$('#popup_close').click(function() {
+			$(".bg_img").css("display", "block");
+			$("#popupDiv").css("display", "none");
+			$("body").css("overflow", "auto");
+
+			$('.pass').css('display', 'none');
+		});
+		/* 은색 자물쇠  */
+		/* 금색 자물쇠 */
+		$('.lock2').click(
+				function() {
+					$('#popupDiv').css('display', 'none');
+					$('#popupDiv2').css('display', 'block');
+					$('#popupDiv3').css('display', 'none');
+					$("#popupDiv4").css("display", "none");
+					$(".money_popup").css("display", "none");
+					$(".bomb_popup").css("display", "none");
+					
+
+					$("body").css("overflow", "hidden");
+
+				});
+		$('#popup_close2').click(function() {
+			$(".bg_img").css("display", "block");
+			$("#popupDiv2").css("display", "none");
+			$("body").css("overflow", "auto");
+
+		});
+		$('#popupDiv3').click(
+				function() {
+					$('#popupDiv').css('display', 'none');
+					$('#popupDiv2').css('display', 'none');
+					$('#popupDiv3').css('display', 'block');
+					$("#popupDiv4").css("display", "none");
+					$(".money_popup").css("display", "none");
+					$(".bomb_popup").css("display", "none");
+					
+
+
+					$("body").css("overflow", "hidden");
+
+				});
+		$('.money').click(
+				function() {
+					$('#popupDiv').css('display', 'none');
+					$('#popupDiv2').css('display', 'none');
+					$('#popupDiv3').css('display', 'none');
+					$("#popupDiv4").css("display", "none");
+					$('.popup').css('display','none');
+					$(".money_popup").css("display", "block");
+					$(".bomb_popup").css("display", "none");
+					
+
+
+					$("body").css("overflow", "hidden");
+
+				});
+		$('.bomb').click(
+				function() {
+					$('#popupDiv').css('display', 'none');
+					$('#popupDiv2').css('display', 'none');
+					$('#popupDiv3').css('display', 'none');
+					$("#popupDiv4").css("display", "none");
+					$('.popup').css('display','none');
+					$(".money_popup").css("display", "none");
+					$(".bomb_popup").css("display", "block");
+					
+
+
+					$("body").css("overflow", "hidden");
+
+				});
+	});
+	/* 금색 자물쇠 */
+	/* 금고 러그  */
+	$(document).ready(function() {
+		$(".money").on("click", function() {
+			$('.money_popup').fadeIn(100);
+		});
+
+		$(".money_close").on("click", function() {
+			$(".money_popup").fadeOut(100);
+		});
+
+		$(".money_pw_1").on("click", function() {
+			var pw_1 = $(".money_pw_1").html();
+			pw_1++;
+
+			if (pw_1 == 10) {
+				pw_1 = 0;
+			}
+			$(".money_pw_1").html(pw_1);
+		});
+
+		$(".money_pw_2").on("click", function() {
+			var pw_2 = $(".money_pw_2").html();
+			pw_2++;
+
+			if (pw_2 == 10) {
+				pw_2 = 0;
+			}
+			$(".money_pw_2").html(pw_2);
+		});
+
+		$(".money_pw_3").on("click", function() {
+			var pw_3 = $(".money_pw_3").html();
+			pw_3++;
+
+			if (pw_3 == 10) {
+				pw_3 = 0;
+			}
+			$(".money_pw_3").html(pw_3);
+		});
+
+		$(".money_pw_4").on("click", function() {
+			var pw_4 = $(".money_pw_4").html();
+			pw_4++;
+
+			if (pw_4 == 10) {
+				pw_4 = 0;
+			}
+			$(".money_pw_4").html(pw_4);
+		});
+
+		$(".money_ok").on("click", function() {
+			var pw_1 = $(".money_pw_1").html();
+			var pw_2 = $(".money_pw_2").html();
+			var pw_3 = $(".money_pw_3").html();
+			var pw_4 = $(".money_pw_4").html();
+			if ((pw_1 == 1) && (pw_2 == 0) && (pw_3 == 0) && (pw_4 == 4)) {
+				$(".money_popup").fadeOut(100);
+				$(".money").fadeOut(100);
+				$(".money_open").fadeIn(100);
+				$(".door_key").fadeIn(100);
+				$(".door_key").on("click", function() {
+					$(".door_key").fadeOut(100);
+					$(".money_popup").fadeOut(100);
+					$(".door_key_1").css("display", "inline-block");
+				});
+			}
+		});
+		$(".card1").on("click", function() {
+			$(".card1").fadeOut(100);
+			$(".card1_1").css("display", "inline-block");
+		});
+		$(".card2").on("click", function() {
+			$(".card2").fadeOut(100);
+			$(".card2_1").css("display", "inline-block");
+		});
+
+		$(".lug").on("click", function() {
+			$(".lug").fadeOut(100);
+			$(".lug_roll").fadeIn(100);
+		});
+
+		$("#close").click(function lock(obj) {
+			$('.popup').fadeOut(100);
+		});
+
+		$(".door").on("click", function() {
+			$(".popup").fadeIn(100);
+			$('#popupDiv').css('display','none');
+			$('#popupDiv2').css('display','none');
+			$('#popupDiv3').css('display','none');
+			$('#popupDiv4').css('display','block');
+			$('.money_popup').css('display','none');
+			$('.bomb_popup').css('display','none');
+			
+				$(".door_key_1").draggable();
+				$("#popupDiv4").droppable({
+				drop : function(event, ui) {
+					location.href="end_2.html";
+				}
+			});
+		});
+
+	});
+	/* 금고 러그  */
+	/* 스위치, 메모  */
+	$(document).ready(function() {
+      $(".switch").on("click", function() {
+         $(".switch_off").css("display", "block");
+         $(".switch").css("display", "none");
+ 
+         $(".memo_2").on("click", function() {
+         $("#back").css("display", "block");
+         $("#pop").show();
+      });
+         });
+      $(".switch_off").on("click", function() {
+          $(".switch_off").css("display", "none");
+          $(".switch").css("display", "block");
+          $("#memo_popup").fadeOut();
+      });
+      $("#back").on("click", function() {
+         $(".memo_popup").fadeOut();
+      });
+   });
+	/* 스위치, 메모  */
+/* 거울, 팝업  */
+	$(document).ready(function() {
+		$(".mirror").on("click", function() {
+			$(".popup").fadeIn(100);
+			$(".mirror_2").fadeIn(100);
+			
+			$('#popupDiv').css('display', 'none');
+			$('#popupDiv2').css('display', 'none');
+			$("#popupDiv3").css("display", "block");
+			$("#popupDiv4").css("display", "none");
+			$(".money_popup").css("display", "none");
+			$(".bomb_poopup").css("display", "none");
+			$(".mirror_2").css("display", "block");
+			$(".back").css("display", "block");
+			$(".mirror_count").css("display", "block");
+			$("body").css("overflow", "hidden");
+		});
+	});
+/* 거울, 팝업  */
+/* 문, 탈출  */
+	
+/* 문, 탈출  */
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+		
+				<div class="bg_img">
+					<div id="btnWrap">
+						<div class="mc">
+							<div class="card_ex"></div>
+						</div>
+						<div class="under">
+							<div class="doll" id="doll"></div>
+							<div class="key1" id="key1"></div>
+							<div class="desk"></div>
+							<div class="mirror"></div>
+							<div class="popup">
+								<input type="button" class="close" id="close" value="X">
+								<div class="big">
+									<div id="popupDiv">
+										<input type="button" class="popup_ok" value="확인">
+										<div class="lock_num">
+											<div class="lock_pw_1">0</div>
+											<div class="lock_pw_2">0</div>
+											<div class="lock_pw_3">0</div>
+											<div class="lock_pw_4">0</div>
+										</div>
+									</div>
+									<div id="popupDiv2"></div>
+									<div id="popupDiv3">
+										<div class="mirror_2"></div>
+										<div class="mirror_count">1 0 0 4</div>
+									</div>
+									<div id="popupDiv4">
+										<div class="door_2"></div>
+									</div>
+								</div>
+								<div class="list">
+									<!--숨겨놨다가 클릭시 드러나게  -->
+									<span class="key1_1"></span> 
+									<span class="card1_1"></span> 
+									<span class="card2_1"></span> 
+									<span class="mirror_1"></span> 
+									<span class="door_key_1"></span>
+								</div>
+							</div>
+							<div class="bomb"></div>
+							<div class="bombcountdown">
+								<div class="countdown"></div>
+							</div>
+							<div class="lug"></div>
+							<div class="lug_roll" id="lug_roll"></div>
+							<div class="money"></div>
+							<div class="money_open"></div>
+							<div class="lock1" id="lock1"></div>
+							<div class="lock1_open" id="lock1_open"></div>
+							<div class="lock2" id="lock2"></div>
+							<div class="lock2_open" id="lock2_open"></div>
+							<div class="card1"></div>
+							<div class="card2"></div>
+							<!-- 스위치, 메모  -->
+							<div class="switch"></div>
+							<div class="switch_off"></div>
+							<div class="memo"></div>
+							<div class="memo_2"></div>
+							<div class="memo_bg_img"></div>
+							<div class="memo_popup" id="pop">
+								<img src="./image/memo.png" id="memo"> 
+								<img src="./image/back_1.png" id="back" style="left:380px; top: 120px;">
+								<div class="memo_password1">8</div>
+								<div class="memo_password2">2</div>
+								<div class="memo_password3">8</div>
+								<div class="memo_password4">2</div>
+							</div>
+							<!-- 스위치, 메모  -->
+							<div class="door"></div>
+							<div class="door_key"></div>
+						</div>
+						<div class="bg"></div>
+						<div class="money_popup">
+							<div class="money_close">X</div>
+							<div class="money_num">
+								<div class="money_pw_1">0</div>
+								<div class="money_pw_2">0</div>
+								<div class="money_pw_3">0</div>
+								<div class="money_pw_4">0</div>
+							</div>
+							<div class="money_ok">확인</div>
+						</div>
+					</div>
+				</div>
+			
+		
+	</div>
+	<div class="bomb_bg"></div>
+	<div class="bomb_popup">
+		<div class="bomb_close">X</div>
+		<div class="bomb_num">
+			<div class="bomb_pw_1" style="margin-left: 173px;">♠</div>
+			<div class="bomb_pw_2" style="margin-left: 15px;">◆</div>
+			<div class="bomb_pw_3" style="margin-left: 15px;">♣</div>
+			<div class="bomb_pw_4" style="margin-left: 15px;">♥</div>
+		</div>
+		<div class="bomb_ok">확인</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var a = "";// 입력값
+var temp = ""; // 보관
+var total = "";// 결과값
+var d = ""; // 부호값
+
+
+function num(obj) {
+	var t = document.getElementById("txt2");
+	
+	if(t.value == "0") { // 숫자 입력.
+		t.value = obj.value;
+		
+	} else {
+		t.value += obj.value;
+}
+
+		
+ function four(obj) {
+	var t = document.getElementById("txt2");
+	var s = document.getElementById("txt1");
+	
+	 temp = t.value;
+	
+	if (total == 0) { // 부호 입력.
+	s.value = temp;
+	t.value = 0;
+	total = (a+temp)*1;
+
+	} else {
+	total = (a*1)+(temp*1)		
+	s.value = total*1;
+	t.value = 0;
+	}
+}
+
+ function rst(obj) {
+	var t = document.getElementById("txt2");
+	var s = document.getElementById("txt1");
+	
+	total = s.value*1;
+} 	console.log(total); // 결과 값
+
+ function del(obj) {
+	var t = document.getElementById("txt2");
+	var s = document.getElementById("txt1");
+	
+	t.value =""; // 값 지움.
+	s.value ="";
+} 
+
+</script>
+</head>
+<body>
+<input type="text" id="txt1" readonly="readonly" value="0" /> <br/>
+<input type="text" id="txt2" readonly="readonly" value="0" /> <br/>
+<input type="button" id="num" value="7" onclick="num(this);"/>
+<input type="button" id="num" value="8" onclick="num(this);"/>
+<input type="button" id="num" value="9" onclick="num(this);"/>
+<input type="button" id="four" value="/" onclick="four(this);"/> <br/>
+<input type="button" id="num" value="4" onclick="num(this);"/>
+<input type="button" id="num" value="5" onclick="num(this);"/>
+<input type="button" id="num" value="6" onclick="num(this);"/>
+<input type="button" id="four" value="*" onclick="four(this);"/> <br/>
+<input type="button" id="num" value="1" onclick="num(this);"/>
+<input type="button" id="num" value="2" onclick="num(this);"/>
+<input type="button" id="num" value="3" onclick="num(this);"/>
+<input type="button" id="four" value="-" onclick="four(this);"/> <br/>
+<input type="button" id="num" value="0" onclick="num(this);"/>
+<input type="button" id="del" value="c" onclick="del(this);"/>
+<input type="button" id="rst" value="=" onclick="rst(this);"/>
+<input type="button" id="four" value="+" onclick="four(this);"/>
+</body>
+</html>

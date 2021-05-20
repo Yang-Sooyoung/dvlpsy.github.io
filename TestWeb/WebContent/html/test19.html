@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS INLINE=BLOCK</title>
+<style type="text/css">
+.a, .b, .c, .d {
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000000;
+}
+.a {
+	background-color: red;
+	display: none !important;
+}
+.b {
+	background-color: blue;
+}
+.c {
+	background-color: green;
+	visibility: hidden;
+}
+.d {
+	background-color: purple;
+}
+.t {
+	display: inline-table;
+	width: 100px;
+	height: 100px;
+	vertical-align: top;
+	text-align:center;
+	border: 1px solid #000000;
+}
+.tc {
+	display: table-cell;
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	text-align: center;
+}
+.box {
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000000;
+}
+</style>
+</head>
+<body>
+<div class="a">none</div>
+<div class="b"></div>
+<div class="c">hidden</div>
+<div class="d"></div>
+<div class="t">
+	<div class="tc">a</div>
+</div>
+<div class="box"></div>
+</body>
+</html>

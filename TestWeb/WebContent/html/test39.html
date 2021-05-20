@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JAVASCRIPT EVENT</title>
+<style type="text/css">
+#box {
+	display : inline-block;
+	width : 100px;
+	height : 100px;
+	border : 1px solid #4e4e4e;
+	background-color : #4e4e4e;
+	position : absolute;
+	top : 0px;
+	left : 0px;
+}
+</style>
+<script type="text/javascript">
+var w = 100;
+var h = 100;
+var t = 0;
+var l = 0;
+
+function a(box) {
+	w += 20;
+	h += 20;
+	
+	box.style.width = w + "px";
+	box.style.height = h + "px";
+}
+
+function c(box) {
+	box.style.backgroundColor = "#5e5eCC";
+}
+
+function d(box) {
+	box.style.backgroundColor = "#4e4e4e";
+	
+	w -= 20;
+	h -= 20;
+	
+	box.style.width = w + "px";
+	box.style.height = h + "px";
+}
+
+function e(box) {
+	box.style.backgroundColor = "#CC5e5e";
+}
+
+function f(box) {
+	box.style.backgroundColor = "#5e5eCC";
+}
+
+function k(event) { //엔터 13번,
+	console.log(event);
+	console.log(event.keyCode);
+	// 119 115 97  100
+	
+	var box = document.getElementById("box");
+	
+	switch(event.keyCode) {
+	case 119 : //w
+		if (t > 0) {
+			t -= 10
+		}
+		break;
+	case 115 : t +=10; //s
+		break;
+	case 97 : // a
+		if (l > 0) {
+			l -= 10
+		}
+		break;
+	case 100 : l += 10; //d
+		break;
+	case 32: //스페이스바
+		if(box.style.display == "" || box.style.display == "inline-block") {
+			box.style.display = "none";   
+		} else {
+			box.style.display = "inline-block";
+		}
+	
+		break;
+	}
+
+	box.style.top = t + "px";
+	box.style.left = l + "px";
+}
+</script>
+</head>
+<body onkeypress="k(event);">
+<div id="box" onclick="a(this);"
+			  onmouseover="c(this);" onmouseout="d(this)"; 
+			  onmousedown="e(this);" onmouseup="f(this)";></div> 
+</body>		  <!--올라갔을때 나갔을때--> <!--눌렀을때 땟을때-->
+</html>

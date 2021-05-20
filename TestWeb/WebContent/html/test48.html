@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제3. 29, 19, 87, 66, 45, 6, 79, 30, 96, 33중에서 57에 가장 가까운 수를 구하시오.</title>
+<script type="text/javascript">
+function q(){
+	var num = [28, 19, 87, 66, 45, 6, 79, 30, 96, 33];
+	var a = 57; //기준값
+	var b = 97; // 배열번호, 배열안에 숫자보다 커야함 num[0]
+	var c = 11; // 값 저장, 배열 개수보다 많아야함 Math.abs(a-num[0])
+	
+	for(var i = 0; i < num.length; i++) {
+		var d = Math.abs(a - Math.abs(num[i])); //계산식
+		if(d < c){ // 계산한게 값보다 작아야됨
+		b = num[i]; //배열번호 넣어줌
+		c = d; // 값
+		}
+	}
+	
+	return b; //else랑 비슷한 의미, b로 돌아간다
+}
+console.log(q()); //return해서 b 찍힘-->
+
+</script>
+</head>
+<body>
+</body>
+</html>

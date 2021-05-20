@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/* 
+	COMMON CSS
+ */
+body {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.body_contents {
+	width: 600px;
+	margin: 0 auto;
+}
+
+/* 
+	Board CSS
+ */
+.board {
+	border-collapse: collapse;
+	font-size: 10.5pt;
+}
+
+.board thead tr {
+	border-bottom: 1px solid #999999;
+	height: 35px;
+}
+.board tbody tr {
+	border-bottom: 1px solid #999999;
+	text-align: center;
+	height: 35px;
+}
+.list_contnets {
+	cursor: pointer;
+}
+.board th {
+	background-color: #DDDDDD;
+}
+
+.paging_div {
+	text-align: center;
+	height: 25px;
+	margin-top: 5px;
+}
+.search_div {
+	text-align: center;
+}
+
+/* 
+	Board Popup CSS
+ */
+.bg_board_div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #000000;
+	opacity:0.3;
+	z-index: 50;
+}
+.popup_board_div {
+	display: inline-block;
+	width: 600px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -300px;
+	background-color: #FFFFFF;
+	border: 1px solid #999999;
+	border-radius: 5px;
+	z-index: 80;
+}
+.close_div {
+	padding: 5px;
+	text-align: right;
+}
+.popup_board_title {
+	display: inline-table;
+	width: 560px;
+	text-align: left;
+	font-weight: bolder;
+	border-bottom: 1px solid #999999;
+}
+.close_img {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.board_contents_div {
+	padding: 5px;
+}
+.board_contents_div table {
+	width: 580px;
+	font-size: 10.5pt;
+}
+.board_contents_div textarea {
+	resize:none;
+	width: 577px;
+}
+.detailContents {
+	width: 570px;
+	height: 350px;
+	border: 1px solid #CCCCCC;
+	overflow: auto;
+	padding: 5px;
+}
+.board_btn_div {
+	text-align: right;
+}
+.update_input {
+	display: none;
+}
+
+/* 
+	Password Popup CSS
+ */
+.bg_pass_div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #000000;
+	opacity:0;
+	z-index: 100;
+}
+.popup_pass_div {
+	display: inline-block;
+	width: 200px;
+	height: 94px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -47px;
+	margin-left: -100px;
+	background-color: #FFFFFF;
+	border: 1px solid #999999;
+	border-radius: 5px;
+	z-index: 150;
+}
+.popup_pass_title {
+	display: inline-table;
+	width: 158px;
+	text-align: left;
+	font-weight: bolder;
+	border-bottom: 1px solid #999999;
+}
+.pass_contents_div {
+	padding: 5px;
+	text-align: right;
+}
+.pass_contents_div input[type='password'] {
+	width: 97%;
+	margin-bottom: 5px;
+}
+.update_btn_div {
+	text-align: right;
+	display: none;
+}
+
+tbody input {
+	width: 497px;
+}

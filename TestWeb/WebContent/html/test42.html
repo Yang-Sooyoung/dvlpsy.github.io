@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var a = (Math.floor(Math.random()*10));
+var b = (Math.floor(Math.random()*10));
+var c = (Math.floor(Math.random()*10));
+var temp ="";
+temp+=a
+temp+=b
+temp+=c
+
+function q(abc) {
+	// console.log(abc);
+	
+	no++;
+	var box = document.getElementById("box");
+	
+	box.innerHTML = temp;
+	
+}
+console.log(temp);
+
+
+
+function num(btn) {
+	var wrap = document.getElementById("wrap");
+	wrap.innerHTML += temp
+}
+
+
+function d(btn) {
+	var wrap = document.getElementById("wrap");
+	wrap.children[0].remove();
+	wrap.innerHTML += temp;
+}
+
+</script>
+</head>
+<body>
+<div id="wrap">
+<div id="box"><input type="text" value="" onclick="num(this);" /></div>
+</div>
+<input type="text"/>
+<input type="text"/>
+<input type="text"/>
+<input type="button" value="재시작" onclick="d(this);" />
+</body>
+</html>

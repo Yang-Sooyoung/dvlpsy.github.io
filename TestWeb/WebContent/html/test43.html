@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type= "text/css">
+.box {
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #000000;
+	background-color: #000000;
+}
+
+</style>
+<script type = "text/javascript" 
+		src="../js/jquery-1.12.4.js"></script>
+<script type = "text/javascript">
+/* window.onload = function() { 자바스크립트, 두개이상 사용X
+	
+} */
+
+var r = 0;
+var g = 0;
+var b = 0;
+
+  $(document).ready(function() {  //body가 그려진 이후, 제이쿼리
+	//addEventListener : 이벤트 할당 
+	/* document.getElementById("btn").addEventListener("click", function() {
+		 
+	}); */
+
+	//on(이벤트종류, 함수) : 이벤트 할당, 이벤트 종류에 따른 이벤트 발생 시 함수를 실행한다.
+	$("#btn").on("click", function() {
+		//document.getElementById("txt").value = "Hi~";
+	console.log($("#txt").val());
+	$("#txt").val("Hi~");
+	});
+	
+	$("#checkBtn").on("click", function() {
+		console.log($(".box").css("background-color"));
+	});
+	
+	$("#btnWrap").on("click", "[type='button']", function() {
+	// $(this) : 이벤트 발생 객체
+		console.log($(this).val());
+	var color = "#";
+	
+	switch($(this).val()) {
+	case "rUp" :
+		if(r < 255) {
+			r += 5;
+		}
+		break;	
+	case "rDown" :
+		if(r > 0) {
+			r -=5;
+		}
+		break;	
+	case "gUp" :
+		if(g < 255) {
+			g += 5;
+		}
+		break;	
+	case "gDown" :
+		if(g > 0) {
+			g -=5;
+		}
+		break;	
+	case "bUp" :
+		if(b < 255) {
+			b += 5;
+		}
+		break;	
+	case "bDown" :
+		if(b > 0) {
+			b -=5;
+		}
+		break;	
+		}
+		
+		if(r.toString(16).length == 1) {
+			color += "0" +r.toString(16);
+		} else {
+			color += r.toString(16);
+		}	
+		if(g.toString(16).length == 1) {
+			color += "0" +g.toString(16);
+		} else {
+			color += g.toString(16);
+		}	
+		if(b.toString(16).length == 1) {
+			color += "0" +b.toString(16);
+		} else {
+			color += b.toString(16);
+		}	
+		
+		$(".box").css("background-color", color);
+	});
+});
+
+</script>
+</head>
+<body>
+<input type ="text" id="txt" />
+<input type ="button" value ="버튼" id ="btn" />
+<br/>
+<div class="box"></div>
+<br/>
+<input type="button" value="체크" id="checkBtn" />
+<div id="btnWrap">
+<input type="button" value="rUp" />
+<input type="button" value="rDown" />
+<input type="button" value="gUp" />
+<input type="button" value="gDown" />
+<input type="button" value="bUp" />
+<input type="button" value="bDown" />
+</div>
+</body>
+</html>

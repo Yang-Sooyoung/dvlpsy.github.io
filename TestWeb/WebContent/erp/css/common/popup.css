@@ -1,0 +1,83 @@
+@charset "UTF-8";
+.popup_bg {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: 0.7;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 50;
+}
+
+.popup {
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	background-color: #ffffff;
+	position: absolute;
+	top: calc(50% - 200px);
+	left: calc(50% - 200px);
+	z-index: 100;
+	box-shadow: 1px 1px 4px 2px #000000;
+}
+
+.popup_title {
+	display: table;
+	width: calc(100% - 10px);
+	height: 50px;
+	margin: 0px 5px;
+	border-bottom: 1px solid #9aa9bd;
+}
+
+.popup_title_txt {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 12pt;
+	font-weight: bold;
+	background-image: url("../../images/common/ibk_logo.png");
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	text-indent: 40px;
+}
+
+.popup_contents {
+	display: inline-block;
+	width: calc(100% - 30px);
+	height: calc(100% - 122px);
+	margin: 0px 5px;
+	padding: 10px;
+	overflow-y: auto;
+	font-size: 10pt;
+}
+
+.popup_btn {
+	display: inline-block;
+	width: calc(100% - 10px);
+	height: 50px;
+	margin: 0px 5px;
+	/* border-top: 1px solid #9aa9bd; */
+	text-align: right;
+}
+
+.popup_btn input[type='button'] {
+	min-width: 80px;
+	height: 32px;
+	background-color: #f7f7f7;
+	font-size: 10pt;
+	border-radius: 3px;
+	margin-top: 9px;
+	margin-left: 3px;
+	margin-right: 3px;
+	border: 1px solid #c2c2c2;
+	padding: 1px 2px;
+	outline: none;
+	cursor: pointer;
+}
+
+.popup_btn input[type='button']:hover {
+	background-color: #022859;
+	color: #fff;
+	border: 1px solid #022859;
+}

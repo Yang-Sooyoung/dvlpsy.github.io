@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery 연습</title>
+<style type="text/css">
+.box {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	border: 1px solid #444444;
+	vertical-align: top;
+}
+</style>
+<script type="text/javascript"
+		src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#btn1").on("click", function() {
+		$(".box").animate({
+			width: "+=50px", //따옴표 붙여야됨
+			height: "+=50px"
+		}, 1000);
+	});
+	
+	$("#btn2").on("click", function() {
+		$(".box").hide();
+	});
+
+	$("#btn3").on("click", function() {
+		$(".box").show();
+	});
+
+	$("#btn4").on("click", function() {
+		$(".box").stop();
+	});
+});
+</script>
+</head>
+<body>
+<input type="button" value="버튼1" id="btn1" />
+<input type="button" value="버튼2" id="btn2" />
+<input type="button" value="버튼3" id="btn3" />
+<input type="button" value="버튼4" id="btn4" />
+<br/>
+<div class="box"></div>
+</body>
+</html>

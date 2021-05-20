@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS BACKGROUND</title>
+<style type="text/css">
+.box {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	height: 150px;
+	background-color: orange;
+	border-bottom: 1px solid #AA4444;
+	border-right: 3px solid #AA7777;
+	border-radius: 5px;
+	box-shadow : 1px 1px 2px 1px #444444 inset; /* 오른쪽 10, 아래 10, 뭉개짐(블러) 5, 번짐(스프레드) 3 */
+} /* inset =안에 그림자 넣음 */
+.box:hover { 
+	outline: 3px solid rgba(0, 0, 0, 0.6);
+}
+
+.bg {
+	height: 600px;
+	border: 1px solid #444444; /*ctrl+shift+/ 하면 주석으로 바뀜 */
+	/* background-image: url("CAT.png");
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%; */
+	background-image: linear-gradient(#AAAAFF, #FFAAAA)
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box"></div>
+<br/>
+<div class="bg"></div>
+</body>
+</html>

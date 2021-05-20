@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+}
+body, html {
+	width : 100%;
+    height : 100%;
+    
+    margin : 0;
+    
+    background-color : #000000;
+    
+    font-size : 0;
+	font-family: 'Press Start 2P', cursive;
+}
+.left_wrap {
+    display: inline-block;
+    height: 100%
+}
+.right_wrap {
+    display: inline-block;
+    width: calc(100% - 1550px);
+    height: 100%;
+
+    text-align: center;
+    vertical-align: top;
+}
+
+/* 맵 파트 CSS */
+/* 맵 CSS */
+.map_table {
+	height : 930px;
+    width : 1550px;
+    
+    vertical-align: top;
+    
+    background-image : url("../images/Map.png");
+	background-repeat : no-repeat;
+}
+.map_table > table {
+    border: 0;
+    border-collapse: collapse;
+}
+td {
+    width:64px;
+    height: 64px;
+}
+/* 오른쪽 메뉴 */
+.menu {
+    display: inline-block;
+    height : 900px;
+
+    background-image : url("../images/right_ui/scroll_right.png");
+    background-position: center;
+	background-repeat : no-repeat;
+}
+/* 라운드 CSS */
+.round {
+    display : inline-block;
+    margin-top: 30px;
+
+    width:100%;
+    height : 60px;
+    line-height: 60px;
+    
+	font-size : 12pt;
+    text-align : center;
+    vertical-align: middle;
+}
+/* 타이머 CSS */
+#time {
+    display : inline-block;
+
+	width:100%;
+    height : 100px;
+    line-height: 100px;
+    
+    font-size: 12pt;
+
+    text-align : center;
+    vertical-align: middle;
+}
+/* 타워 리스트 관련 CSS */
+.character {
+	width: 100%;
+	height : 350px;
+	font-size : 12pt;
+	
+	text-align : center;
+}
+.char_table {
+    display: inline-block;
+    width: 260px;
+    height: 100%;
+    margin-left: -12px;
+
+    text-align: center;
+}
+.char_table > thead {
+    margin-bottom: 10px;
+    margin-left: -12px;
+}
+.cc {
+    text-align: center;
+    vertical-align: middle;
+}
+.tt {
+    width: 80px;
+    height: 160px;	
+    
+    vertical-align: middle;
+    text-align:center;
+}
+.tt:hover {
+    cursor: pointer;
+    background-color : #9d803d80;
+}
+img {
+    margin-bottom: 15px;
+}
+.gold {
+    display : inline-block;
+	width: 260px;
+    height : 60px;
+    line-height: 60px;
+    margin-left: -13px;
+
+	font-size : 10pt;
+    
+    vertical-align: middle;
+	text-align : center;
+}
+.life {
+	display : inline-block;
+	width:260px;
+    height : 60px;
+    line-height: 60px;
+    margin-left: -13px;
+    
+	font-size : 10pt;
+	
+    vertical-align: middle;
+	text-align : center;
+}
+/* Start 버튼 CSS */
+.start {
+    display: inline-block;
+	width:260px;
+    height : 80px;
+    margin-left: -16px;
+    
+    font-size : 12pt;
+    font-weight: 500;
+	
+	text-align : center;
+}
+#startBtn {
+    display: inline-block;
+	width : 250px;
+    height : 80px;
+    line-height: 80px;
+    
+    background-image : url("../images/right_ui/Button.png");
+    background-size : 250px, 80px;
+    color : white;
+    
+    text-align: center;
+    vertical-align: middle;
+}
+#startBtn:hover {
+    cursor: pointer;
+}
+/* 버튼 글씨 CSS */
+.btn_txt {
+    font-size: 7pt;
+    font-weight: 300;
+}
+/* 격자 생성 버튼 CSS */
+#checkWrap{
+    display : inline-block;
+	width:260px;
+    height : 60px;
+    line-height: 60px;
+
+	font-size : 10pt;
+
+    margin-left : -20px;
+	
+    color : white;
+    
+    text-align: center;
+    vertical-align: middle;
+}
+#checkWrap:hover, .lb_txt:hover, #checkbtn:hover {
+    cursor: pointer;
+}
+/* 격자 생성 관련 클래스 */
+.makegrid {
+    border: 1px solid #FFFFFF;
+}
+.isbuild {
+    background-color: #3838388e;
+}
+/* 선택한 필드 클래스 */
+.isselect {
+    background-color: #FF4B4B66;
+}
+
+
+/* 타워 파트 CSS */
+.build:hover {
+    cursor: pointer;
+    background-color:#00000066;
+}
+.tower_hover {
+    background-color:#868d5c66;
+}
+
+
+/* 몹 파트 CSS */
+/* 몹 CSS */
+.mob {
+    display: inline-block;
+
+    position:absolute;
+    top:0px;
+    left:128px;
+
+    width: 64px;
+    height: 64px;
+    
+    background-position-x: 0px;
+    background-position-y: 0px;     
+    background-repeat: no-repeat;
+
+    vertical-align: top;
+}
+.mob_hidden {
+    display : none;
+}
+/* 체력바 CSS */
+#hp_bar_wrap {
+    height: 6px;
+    border: 1px solid #c4c4c4;
+    background-color: #1b1b1b88;
+
+    text-align: left;
+}
+#hp_bar {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #299c3c;
+}
+/* 시체 CSS */
+.dead {
+    display: inline-block;
+
+    position:absolute;
+
+    width: 64px;
+    height: 64px;
+    
+    background-position-x: 0px;
+    background-position-y: -256px;     
+    background-repeat: no-repeat;
+}

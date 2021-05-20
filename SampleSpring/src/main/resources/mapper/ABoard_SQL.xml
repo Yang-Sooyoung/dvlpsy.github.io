@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aboard">
+	<select id="getABoardCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM BOARD B INNER JOIN MEMBERS M
+		                     ON B.MNO = M.MNO
+		WHERE B.BOARD_DEL = 0
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn eq 0">
+					AND B.BOARD_TITLE LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn eq 1">
+					AND M.MNM LIKE '%' || #{searchTxt} || '%'
+				</when>
+			</choose>
+		</if>
+	</select>
+	<select id="getABoardList" resultType="hashmap">
+		SELECT B.BOARD_NO, B.BOARD_TITLE, B.BOARD_HIT, B.BOARD_DT, B.MNM
+		FROM (  SELECT B.BOARD_NO, B.BOARD_TITLE, B.BOARD_HIT, 
+		               TO_CHAR(B.BOARD_DT, 'YYYY-MM-DD') AS BOARD_DT, M.MNM,
+		               ROW_NUMBER() OVER(ORDER BY B.BOARD_NO DESC) AS RNUM
+		        FROM BOARD B INNER JOIN MEMBERS M
+		                             ON B.MNO = M.MNO
+		        WHERE B.BOARD_DEL = 0
+		        <if test="searchTxt != null and searchTxt != ''">
+					<choose>
+						<when test="searchGbn eq 0">
+							AND B.BOARD_TITLE LIKE '%' || #{searchTxt} || '%'
+						</when>
+						<when test="searchGbn eq 1">
+							AND M.MNM LIKE '%' || #{searchTxt} || '%'
+						</when>
+					</choose>
+				</if>
+		     ) B
+		WHERE B.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	<select id="getABoard" parameterType="hashmap" resultType="hashmap">
+		SELECT B.BOARD_NO, B.BOARD_TITLE, B.BOARD_CON, B.BOARD_HIT, B.BOARD_FILE, 
+		       TO_CHAR(B.BOARD_DT, 'YYYY-MM-DD') AS BOARD_DT, M.MNO, M.MNM
+		FROM BOARD B INNER JOIN MEMBERS M
+		                     ON B.MNO = M.MNO
+		WHERE B.BOARD_NO = #{boardNo}
+	</select>
+	<insert id="ABoardAdd" parameterType="hashmap">
+		INSERT INTO BOARD(BOARD_NO, MNO, BOARD_TITLE, BOARD_CON, BOARD_FILE)
+		VALUES(BOARD_SEQ.NEXTVAL, #{mno}, #{boardTitle}, #{boardCon}, #{boardFile})
+	</insert>
+	<update id="updateABoardHit" parameterType="hashmap">
+		UPDATE BOARD SET BOARD_HIT = BOARD_HIT + 1
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+	<update id="ABoardUpdate" parameterType="hashmap">
+		UPDATE BOARD SET BOARD_TITLE = #{boardTitle},
+		                 BOARD_CON = #{boardCon},
+		                 BOARD_FILE = #{boardFile}
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+	<update id="ABoardDelete" parameterType="hashmap">
+		UPDATE BOARD SET BOARD_DEL = 1
+		WHERE BOARD_NO = #{boardNo}
+	</update>
+</mapper>

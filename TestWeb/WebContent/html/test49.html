@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>32를 소인수분해하여 결과를 출력하시오.</title>
+<script type="text/javascript">
+//소인수분해: 소수로 나누어서 소수가 남을때까지의 결과.
+//※반복횟수 제한X
+//마지막 나눈 결과가 1이면 반복문을 나온다. 반복횟수x, 특정상황일떄 브레이크, 조건 빠져나옴, 계속 돌수있게..
+//소인수분해, 소수로 나누는것, 앞에서 다 나누면 소수 필요x,
+var a = 32;
+var b = "";
+
+	for(var j = 2; j < a; j++){ // 2~자기자신 -1
+		
+		if(a % j == 0) {
+			b += j + " "; // ?
+			a /= j; // a = a/j
+			j--;
+		}
+	}
+b += a + " "; // ?
+console.log(b); // ?
+</script>
+</head>
+<body>
+
+</body>
+</html>

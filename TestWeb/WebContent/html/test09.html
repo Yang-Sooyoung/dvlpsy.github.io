@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TEST03.NAVER 분할</title>
+<style type="text/css">
+body {
+	font-size: 0pt; /*여백 없애기 위해서 필요*/
+}
+.a {
+	display: block; /*자식*/
+	background-color: blue; /*배경색 설정*/
+	width: 800px; /*가로 넓이*/
+	height: 25px; /*세로 높이*/
+}
+.b {
+	display: block;
+	background-color: red; /*pink,brown*/
+	width: 800px;
+	height: 70px;
+}
+.c {
+	display: block;
+	background-color: black;
+	width: 800px;
+	height: 30px;
+}
+.d {
+    display:inline-block; /*부모*/
+	background-color: orange;
+	width: 800px; /*계산해서 써야함..*/
+	height: 500px; /*계산해서 써야함.. 특히 중요*/
+	vertical-align: top; /*안쓰면 밑으로 밀림*/
+}
+.e {
+	display: inline-block;
+	background-color: olive;
+	width: 550px;
+	height: 500px;
+	vertical-align: top;
+}
+.f {
+	display: block;
+	background-color: green;
+	width: 550px;
+	height: 50px;
+	vertical-align: top;
+}
+.i {
+	display: block;
+	background-color: yellow;
+	width: 550px;
+	height: 35px;
+	vertical-align: top;
+}
+.j {
+	display: block;
+	background-color: blue;
+	width: 550px;
+	height: 160px;
+	vertical-align: top;
+}
+.k {
+	display: block;
+	background-color: black;
+	width: 550px;
+	height: 45px;
+	vertical-align: top;
+}
+.l {
+	display: inline-block;
+	background-color: orange;
+	width: 550px;
+	height: 70px;
+	vertical-align: top;
+}
+.la {
+	display: inline-block;
+	background-color: yellow;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.lb {
+	display: inline-block;
+	background-color: gray;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.lc {
+	display: inline-block;
+	background-color: gold;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.ld {
+	display: inline-block;
+	background-color: silver;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.le {
+	display: inline-block;
+	background-color: olive;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.lf {
+	display: inline-block;
+	background-color: black;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.lg {
+	display: inline-block;
+	background-color: yellow;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.lh {
+	display: inline-block;
+	background-color: gray;
+	width: 68.75px;
+	height: 70px;
+	vertical-align: top;
+}
+.m {
+	display: block;
+	background-color: green;
+	width: 550px;
+	height: 140px;
+	vertical-align: top;
+}
+.g {
+	display: inline-block;
+	background-color: red;
+	width: 250px;
+	height: 500px;
+	vertical-align: top;
+}
+.h {
+	display: block;
+	background-color: purple;
+	width: 250px;
+	height: 130px;
+	vertical-align: top;
+}	
+.n {
+	display: block;
+	background-color: green;
+	width: 250px;
+	height: 35px;
+	vertical-align: top;
+}	
+.o {
+	display: block;
+	background-color: orange;
+	width: 250px;
+	height:55px;
+	vertical-align: top;
+}
+.p {
+	display: block;
+	background-color: red;
+	width: 250px;
+	height:50px;
+	vertical-align: top;
+}
+.q {
+	display: block;
+	background-color: purple;
+	width: 250px;
+	height:40px;
+	vertical-align: top;
+}
+.r {
+	display: block;
+	background-color: black;
+	width: 250px;
+	height:190px;
+	vertical-align: top;
+}
+</style>
+</head>
+<body>
+<div class="a"></div> <!--색상,디자인 하기 위해서는 div를 써야함 -->
+<div class="b"></div> <!-- 클래스로 묶어야함 -->
+<div class="c"></div>
+<div class="d">
+	<div class="e"> <!-- 묶어야 inline-block을 사용 가능, 부모 자식 둘다 써야함 -->
+		<div class="f"></div>
+		<div class="i"></div>
+		<div class="j"></div>
+		<div class="k"></div>
+		<div class="l">
+				<div class="la"></div>
+				<div class="lb"></div>
+				<div class="lc"></div>
+				<div class="ld"></div>
+				<div class="le"></div>
+				<div class="lf"></div>
+				<div class="lg"></div>
+				<div class="lh"></div>
+			</div> <!-- 닫기, 위치 잘 확인하기, 영어 철자 틀리지말기 -->
+		<div class="m"></div>
+	</div>
+	<div class="g">
+		<div class="h"></div>
+		<div class="n"></div>
+		<div class="o"></div>
+		<div class="p"></div>
+		<div class="q"></div>
+		<div class="r"></div>
+	</div>
+</div>
+</body>
+</html>

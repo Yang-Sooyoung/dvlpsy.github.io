@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+/* var arr = [3, 5, 7];
+
+console.log(arr[2]);
+
+arr[2] = 11;
+
+console.log(arr[2]);
+
+console.log(arr.length);
+//            0 1 2      3
+for(var i = 0 ; i < arr.length ; i++){
+	console.log(arr[i]);
+	
+} */
+
+///////////////////////////////////////
+var a = [5, 7, 3]; //  3 7 5 // 3 5 7
+var b = 0; 
+//     
+// 오름차순으로 정렬하시오.
+if(a[0]>a[1]){
+	b=a[0];
+	a[0]=a[1];
+	a[1]=b;
+}
+if(a[0]>a[2]){
+	b=a[0];
+	a[0]=a[2];
+	a[2]=b;
+}
+if(a[1]>a[2]){
+	b=a[1];
+	a[1]=a[2];
+	a[2]=b;
+}
+
+for(var i = 0 ; i < a.length ; i++){
+	console.log(a[i]);
+}	
+// 0 1 2   3, 공간 0부터, 길이 1부터
+for(var i = 0 ; i < a.length-1 ; i++){
+	for(var f = i+1; f < a.length ; f++){ 
+		if(a[i] > a[f]){
+			b=a[i];
+			a[i]=a[f];
+			a[f]=b;
+		}	
+	}
+}
+console.log(a);
+		
+		
+		 
+	
+	
+	
+	
+//출력
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

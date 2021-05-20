@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML STYLES</title> 
+<style type="text/css"> /* css 주석 */ /* 스타일이라는 태그를 열고 써야함 */
+.a {
+	background-color: red; /*배경 색상 빨강*/
+} 
+
+#b {
+	background-color: green; /*배경 색상 초록*/
+}
+
+[name='c'] {
+	background-color: blue; /*배경 색상 파랑*/
+}
+
+div.a {/* div중에 class가 a인것을 찾아서 글자색 white를 주겠다, 붙여서 써야함 */
+	color: white;
+}
+.d, .e {/* ,쓸때는 띄어쓰기 해도됌, 복수로 선택가능 */
+	color: orange;
+}
+
+#b div { /* b안에 있는 모든 div 적용 */
+	background-color: silver;
+}
+
+#b > div { /*b의 자식들까지 div 적용 */
+	background-color: red;
+}
+
+span:hover { /* 마우스커서 올릴때 색생 바뀜*/
+	background-color: yellow;
+}
+</style>
+</head>
+<div class="a">1</div> <!--가로를 다 가져가겠다-->
+<div id="b">2
+	<div>2-1
+		<div>2-1-1</div>
+	</div>
+	<div>2-2</div>
+</div>
+<div name="c">3</div> 
+<span class="a">1</span> <!--내용만큼만 가져가겠다-->
+<span class="d">2</span>
+<span class="e">3</span>
+</body>
+</html>

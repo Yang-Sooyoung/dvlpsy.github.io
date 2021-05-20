@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JAVASCRIPT Array, Object, Function</title>
+<script type="text/javascript">
+var arr= [1, 2, 3];
+
+console.log(arr.toString()); // 값을 문자열로 바꿔준다.
+
+//배열.push(값) : 값을 배열 맨 끝에 추가한다.
+arr.push(4);
+console.log(arr.toString());
+
+arr.splice(3, 1); // 3번째 자리부터 1개를 지우고싶어.
+console.log(arr.toString());
+
+arr.splice(1, 0, 7); // 1번째 자리에 안지우고 7을 넣고싶어.
+console.log(arr.toString());
+
+var arr2 = [[1, 2, 3], [4, 5, 6]];
+
+console.log(arr2.toString());
+
+console.log(arr2.length);
+console.log(arr2[0].length);
+
+var stu = {
+	name : "홍길동",
+	age : 30,
+	ne : 10,
+	tel : "070-1588-9292",
+	addr : "서울"
+		
+};
+
+console.log(stu);
+console.log(stu.name);
+
+stu.name = "김철수";
+
+console.log(stu.name);
+
+var list = [
+	{no : 10, title : "test", writer : "K"},
+	{no : 9, title : "aaa", writer : "B"},
+	{no : 8, title : "kkkk", writer : "L"},
+];
+
+for(var i = 0; i < list.length; i++){
+	console.log("글번호 : " + list[i].no + "제목 : " + list[i].title);
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

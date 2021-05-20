@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="book">
+	<select id="getAbookCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM BOOK
+		WHERE BOOK_DEL = 0
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn eq 0">
+					AND BOOK_NO LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn eq 1">
+					AND BOOK_NAME LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn eq 2">
+					AND BOOK_WRITER LIKE '%' || #{searchTxt} || '%'
+				</when>
+			</choose>
+		</if>
+	</select>
+	<select id="getBookList" resultType="hashmap">
+		SELECT B.BOOK_NO, B.BOOK_NAME, B.BOOK_WRITER
+		FROM ( SELECT BOOK_NO, BOOk_NAME, BOOK_WRITER, BOOK_PB,
+					  ROW_NUMBER() OVER(ORDER BY BOOK_NO DESC) AS RNUM
+			   FROM BOOK
+			   WHERE BOOK_DEL = 0 
+			   <if test="searchTxt != null and searchTxt != ''">
+					<choose>
+						<when test="searchGbn eq 0">
+							AND BOOK_NO LIKE '%' || #{searchTxt} || '%'
+						</when>
+						<when test="searchGbn eq 1">
+							AND BOOK_NAME LIKE '%' || #{searchTxt} || '%'
+						</when>
+						<when test="searchGbn eq 2">
+							AND BOOK_WRITER LIKE '%' || #{searchTxt} || '%'
+						</when>
+					</choose>
+				</if>
+			  ) B
+		WHERE B.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	<select id="getBook" parameterType="hashmap" resultType="hashmap">
+		SELECT BOOK_NO, BOOK_NAME, BOOK_WRITER, BOOK_PB, 
+		TO_CHAR(BOOK_PBDT, 'YYYY-MM-DD') AS BOOK_PBDT, TO_CHAR(BOOK_RGDT, 'YYYY-MM-DD') AS BOOK_RGDT
+		FROM BOOK
+		WHERE BOOK_NO = #{bookno}
+	</select>
+	<insert id="addBook" parameterType="hashmap">
+		INSERT INTO BOOK(BOOK_NO, BOOK_NAME, BOOK_WRITER, BOOK_PB, BOOK_PBDT)
+		VALUES(BOOK_SEQ.NEXTVAL, #{bookname}, #{bookwriter}, #{bookpb}, #{bookpbdt})
+	</insert>
+	<update id="updateBook" parameterType="hashmap">
+		UPDATE BOOK SET BOOK_NAME = #{bookname}, 
+						BOOK_WRITER = #{bookwriter}, 
+						BOOK_PB = #{bookpb}, 
+						BOOK_PBDT = #{bookpbdt}
+		WHERE BOOK_NO = #{bookno}
+	</update>
+	<delete id="deleteBook" parameterType="hashmap">
+		DELETE FROM BOOK
+		WHERE BOOK_NO = #{bookno}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

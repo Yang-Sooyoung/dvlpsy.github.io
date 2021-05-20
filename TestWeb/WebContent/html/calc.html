@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function num(num) {
+	var input_val = document.getElementById("input_val");
+	
+	if(input_val.value == "0") {
+		input_val.value = num;
+	} else {
+		input_val.value += num;
+	}
+	
+	document.getElementById("cal_flag").value = "false";
+}
+
+function clr() {
+	document.getElementById("input_val").value = "0";
+	document.getElementById("result_val").value = "0";
+	document.getElementById("temp_val").value = "";
+	document.getElementById("cal_val").value = "";
+	document.getElementById("cal_flag").value = "false";
+}
+
+function calc(val) {
+	var result_val = document.getElementById("result_val");
+	var input_val = document.getElementById("input_val");
+	var temp_val = document.getElementById("temp_val");
+	var cal_val = document.getElementById("cal_val");
+	
+	if(cal_val.value == "") {
+		result_val.value = input_val.value;
+	} else {
+		if(cal_val.value == "+") {
+			result_val.value 
+					= result_val.value * 1 + input_val.value * 1;
+		} else if(cal_val.value == "-") {
+			result_val.value 
+					= result_val.value * 1 - input_val.value * 1;
+		} else if(cal_val.value == "*") {
+			result_val.value 
+					= result_val.value * 1 * input_val.value * 1;
+		} else if(cal_val.value == "/") {
+			result_val.value 
+					= result_val.value * 1 / input_val.value * 1;
+		}
+		temp_val.value = input_val.value;
+		document.getElementById("cal_flag").value = "true";
+	}
+	
+	cal_val.value = val;
+	input_val.value = "0";
+}
+
+function resultCal() {
+	var result_val = document.getElementById("result_val");
+	var input_val = document.getElementById("input_val");
+	var temp_val = document.getElementById("temp_val");
+	var cal_val = document.getElementById("cal_val");
+	var cal_flag = document.getElementById("cal_flag");
+	var val = "";
+	
+	if(cal_flag.value == "true") {
+		val = temp_val.value;
+	} else {
+		val = input_val.value;
+		
+		cal_flag.value = "true";
+		temp_val.value = input_val.value;
+	}
+	
+	if(cal_val == "") {
+		result_val.value = val.value;
+	} else {
+		if(cal_val.value == "+") {
+			result_val.value 
+					= result_val.value * 1 + val * 1;
+		} else if(cal_val.value == "-") {
+			result_val.value 
+					= result_val.value * 1 - val * 1;
+		} else if(cal_val.value == "*") {
+			result_val.value 
+					= result_val.value * 1 * val * 1;
+		} else if(cal_val.value == "/") {
+			result_val.value 
+					= result_val.value * 1 / val * 1;
+		}
+	}
+	
+	input_val.value = "0";
+}
+</script>
+</head>
+<body>
+<input type="text" id="cal_val" />
+<input type="text" id="temp_val" />
+<input type="text" id="cal_flag" value="false" />
+<table>
+	<tr>
+		<td colspan="4">
+			<input type="text" id="result_val" 
+				   value="0" readonly="readonly"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<input type="text" id="input_val" 
+				   value="0" readonly="readonly"/>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="button" value="7" onclick="num('7');" /></td>
+		<td><input type="button" value="8" onclick="num('8');" /></td>
+		<td><input type="button" value="9" onclick="num('9');" /></td>
+		<td><input type="button" value="+" onclick="calc('+');" /></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="4" onclick="num('4');" /></td>
+		<td><input type="button" value="5" onclick="num('5');" /></td>
+		<td><input type="button" value="6" onclick="num('6');" /></td>
+		<td><input type="button" value="-" onclick="calc('-');" /></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="1" onclick="num('1');" /></td>
+		<td><input type="button" value="2" onclick="num('2');" /></td>
+		<td><input type="button" value="3" onclick="num('3');" /></td>
+		<td><input type="button" value="*" onclick="calc('*');" /></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="0" onclick="num('0');" /></td>
+		<td><input type="button" value="c" onclick="clr();" /></td>
+		<td><input type="button" value="=" onclick="resultCal();" /></td>
+		<td><input type="button" value="/" onclick="calc('/');" /></td>
+	</tr>
+</table>
+</body>
+</html>

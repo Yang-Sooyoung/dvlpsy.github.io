@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var no = 1;
+
+function b1() {
+	var wrap = document.getElementById("wrap");
+	
+	no++;
+	// \ : 다음에 오는 특수문자를 일반문자로 인식한다.
+	
+	var html = "<div id=\"con"+ no +"\">"+ no +"<input type=\"button\" value=\"삭제\" onclick=\"d(this);\" /></div>";
+	
+	// innerHTML : 엔티티 공백까지 포함
+	wrap.innerHTML += html; // 채팅, 장바구니, 없었던 태그 문자열로 추가
+}
+
+function b2() {
+	var wrap = document.getElementById("wrap");
+	
+	no++;
+	// \ : 다음에 오는 특수문자를 일반문자로 인식한다.
+	
+	var html = "<div id=\"con"+ no +"\">"+ no +"<input type=\"button\" value=\"삭제\" onclick=\"d(this);\" /></div>";
+	
+	// innerHTML : 엔티티 공백까지 포함
+	wrap.innerHTML = html + wrap.innerHTML; // 채팅, 장바구니, 없었던 태그 문자열로 추가
+}
+
+function d(btn) {
+	btn.parentNode.remove();
+}
+
+function b3() {
+	var wrap = document.getElementById("wrap");
+	
+	wrap.children[0].remove();
+}
+function b4() {
+	var wrap = document.getElementById("wrap");
+	
+	wrap.innerHTML = "";
+	
+	no = 0;
+}
+</script>
+</head>
+<body>
+<input type="button" value="버튼1" onclick="b1();" />
+<input type="button" value="버튼2" onclick="b2();" />
+<input type="button" value="버튼3" onclick="b3();" />
+<input type="button" value="버튼4" onclick="b4();" />
+<div id="wrap">
+<div id="con1">1<input type="button" value="삭제" onclick="d(this);" /></div>
+</div>
+</body>
+</html>

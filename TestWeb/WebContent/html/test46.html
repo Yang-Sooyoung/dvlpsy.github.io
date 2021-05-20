@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제1. 1~100까지 소수의 개수를 구하시오.</title>
+<script type="text/javascript">
+var cnt = 0; // 소수누적, 카운트
+// 1과 자기자신으로 나눠지는 수라 1 포함x, 
+for(var i = 2; i <= 100; i++) { // 100까지 반복
+ 	var na = 0; //나머지 0
+ 	
+ 	for(var j = 2; j < i; j++) { // 소수가 아닌 최소값으로 해야함. 한번씩 다 나눠봐서
+ 		if(i % j == 0) { // i(범위)에서 j(조건)을 나눈 나머지가 0일때, 소수가 아닐때 
+ 			na++; // 나머지 증가
+ 			break; // 멈춤, 해당되는 조건에 만족을 하면 멈추고 나간다.
+ 		}
+ 	}
+ 	
+ 	if(na == 0) { // 나머지가 0이 아닐때
+ 		cnt++; // 카운트 증가
+ 	}
+}
+console.log(cnt); // 카운트 출력
+</script>
+</head>
+<body>
+
+</body>
+</html>

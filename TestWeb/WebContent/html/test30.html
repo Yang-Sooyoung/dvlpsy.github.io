@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript 연습</title>
+<script type="text/javascript">
+/*
+for(var i = 1; i < 2; i++) {
+	for(var j = 1; j < 11; j++){
+		s+=i+j;
+		if(j > s){
+		console.log(s);
+		} else {
+		console.log(i);
+		}
+	}
+}
+*/
+
+var a = 0; //순서가 중요, 이게 젤 좋은거
+var b = 1;
+var c = 0;
+for(var i = 1; i < 11; i++){
+	
+	c=a+b;
+	b=a; 
+	a=c; 
+	console.log(c);	
+}
+
+var d=0;
+var e=1;
+var f=0;
+
+for(var j = 1; j < 11; j++){
+	
+	if(j<1){
+		continue;
+		console.log(b);
+	}
+	f=e+d;
+	e=d;
+	d=f;
+	console.log(f);
+}
+	
+var a=0;
+var b=1;
+var c=0;
+
+for (var i=1; i < 11; i++){
+	
+	a=b;
+	b=c;
+	c=a+b;
+	
+	console.log(c);
+}
+
+var a=0;
+var b=1;
+var c=0;
+
+for (var i=1; i < 11; i++){
+	
+	a=b;
+	b=c;
+	c=a+b;
+	
+	console.log(c);
+}
+
+var a = 0;
+var b = 1;
+var temp = 0;
+
+for(var i = 0; i < 10 ; i++) {
+// 로직 전 b를 찍을 경우
+/* 
+  i a b temp
+  0 0 1  0
+  1 1 1  1
+  2 1 2  2
+  3 2 3  3
+  
+*/
+	console.log(b);
+	temp = a + b ;
+	a = b;
+	b = temp;
+}
+
+// 로직 후 b를 찍을 경우
+/* 
+  i a b temp
+  0 1 1  1
+  1 2 2  2
+  2 2 3  3
+  3 3 5  5
+  
+*/
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

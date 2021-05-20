@@ -1,0 +1,111 @@
+@charset "UTF-8";
+.underbox {
+	width: 800px;
+	border-top: 2px solid #9aa9bd;
+	border-bottom: 1px solid #9aa9bd;
+	margin-bottom: 10px;
+}
+
+.underline {
+	width: 100%;
+	min-height: 43px;
+	border-bottom: 1px solid #9aa9bd;
+	display: inline-table;
+}
+
+.line1 {
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #e4eaf2;
+	width: 150px;
+	min-height: 43px;
+	line-height: 43px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.con1, .con2, .con3 {
+	font-size: 10pt;
+	min-height: 43px;
+	line-height: 43px;
+	display: inline-block;
+	padding: 0px 5px;
+}
+
+.con1 {
+	width: 200px;
+}
+
+.con2 {
+	width: 400px;
+}
+
+.con3 {
+	width: 600px;
+}
+
+.underline textarea {
+	margin-top: 5px;
+	margin-bottom: -10px;
+	resize: none;
+}
+
+.underline input[type='text'], .underline input[type='date'] {
+	max-width: calc(100% - 12px);
+	height: 28px;
+	font-size: 10pt;
+	border-radius: 3px;
+	margin: 0 3px;
+	border: 1px solid #c2c2c2;
+	padding: 1px 2px;
+	outline: none;
+}
+
+.underline input[type='button'], .underline select {
+	max-width: calc(100% - 12px);
+	height: 32px;
+	background-color: #f7f7f7;
+	font-size: 10pt;
+	border-radius: 3px;
+	margin: 0 3px;
+	border: 1px solid #c2c2c2;
+	padding: 1px 2px;
+	outline: none;
+}
+
+.underline input[type='button'] {
+	min-width: 80px;
+	cursor: pointer;
+}
+
+.underline input[type='button']:hover {
+	background-color: #022859;
+	color: #fff;
+	border: 1px solid #022859;
+}
+
+.detail_btn_area {
+	width: 800px;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.detail_btn_area input[type='button'] {
+	min-width: 80px;
+	height: 32px;
+	background-color: #f7f7f7;
+	font-size: 10pt;
+	border-radius: 3px;
+	margin: 0 3px;
+	border: 1px solid #c2c2c2;
+	padding: 1px 2px;
+	outline: none;
+	cursor: pointer;
+}
+
+.detail_btn_area input[type='button']:hover {
+	background-color: #022859;
+	color: #fff;
+	border: 1px solid #022859;
+}

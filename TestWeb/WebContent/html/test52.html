@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+		src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+/* $(document).ready(function() { //준비가 되면 함수를 시작하겠다. 꼭 써야됨.
+	$("#runBtn").on("click", function() { //id runBtn를 실행 할 때, "#runBtn", 클릭할 시 기능 실행
+		$("#res").empty(); //비우기
+		var no = $("#dan").val()  //변수 dan 선언, id dan에게 값을 넣어줌
+
+	for(var i=1; i < 10; i++) {
+		$("#res").append(no+ ' * ' + i + ' = ' + no * i + "<br/>");
+		
+		//id res에게 해당 개체 뒤에 값을 붙여넣겠다. br를 넣어서 한칸 띄워준다.
+		}
+	}); 
+}); */ //id 개체 실행시 닫음 모양
+////////////////////ver2
+var html= "";
+$(document).ready(function() { //준비가 되면 함수를 시작하겠다. 꼭 써야됨.
+	html="";
+	$("#runBtn").on("click", function() { //id runBtn를 실행 할 때, "#runBtn", 클릭할 시 기능 실행
+		html="";
+		var no = $("#dan").val()  //변수 dan 선언, id dan에게 값을 넣어줌
+		for(var i=1; i < 10; i++) {
+			html += no+ ' * ' + i + ' = ' + no * i + "<br/>"
+		//id res에게 해당 개체 뒤에 값을 붙여넣겠다. br를 넣어서 한칸 띄워준다.
+		}
+		$("#res").append(html);
+	}); 
+}); //id 개체 실행시 닫음 모양
+
+</script>
+</head>
+<body>
+<input type="text" id="dan" placeholder="단을입력해주세요." />
+<!-- 화면에 9를 입력하는 순간 $("#dan").val() == 9; -->
+<input type="button" value="나와라!" id="runBtn" />
+<div id="res">
+</div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	margin: 0px;
+	font-size: 0pt;
+}
+.wrap {
+	display: inline-block;
+	width: 450px;
+	height: 544px;
+	position: absolute;
+	top: calc(50% - 251px);
+	left: calc(50% - 225px);/* 박스사이즈 기준 */
+	z-index: 100; /* 박스높이, 내용 :416, 여백 : 위 48, 아래, 36 = 다 더하면 500 */
+	/*보더 : 1px x2 502px /2 = 251px */
+}
+
+.box {
+	width: 368px;
+	height: 416px;
+	border: 1px solid #dadce0;
+	border-radius: 8px;
+	padding: 48px 40px 36px 40px;
+}
+
+.footer {
+	height: 22px;
+	margin-top: 20px;
+}
+
+.footer_left {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 231px);
+	height: 22px;
+}
+
+.footer_left select {
+	border: 0px;
+	width: 76px;
+	font-size: 12px;
+}
+
+.footer_right {
+	display: inline-block;
+	vertical-align: top;
+	width: 231px;
+	height: 22px;
+	text-align: right;
+}
+
+.footer_right div {
+	display: inline;
+	vertical-align: top;
+	width: 33%;
+	cursor: pointer;
+	color: #757575;
+	font-size: 12px;
+	padding: 0px 16px;
+}
+
+.footer_right div:nth-child(3) {
+	padding: 0px 0px 0px 16px !important;
+}
+
+.logo {
+	background-image: url('google.PNG');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	height: 39px;
+}
+
+.login_text {
+	height: 31px;
+	padding-top: 6px;
+	color: #202124;
+	font-size: 24px;
+	text-align: center;
+}
+
+.login_info {
+	height: 24px;
+	padding-top: 8px;
+	color: #202124;
+	font-size: 14px;
+	text-align: center;
+}
+
+.email {
+	margin-top: 24px;
+	width: 336px;
+	height: 28px;
+	padding: 13px 15px;
+	font-size: 17px;
+	border: 1px solid #dadce0;
+	border-radius: 4px;
+    color: #202124;
+	
+}
+
+.email_forget {
+	height: 22px;
+	padding: 9px 0px 3px 0px;
+	color: #1a73e8;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.info {
+	margin-top: 32px;
+	height: 54px;
+	color: #5f6368;
+    font-size: 15px;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+}
+
+.info span {
+	color: #1a73e8;
+	cursor: pointer;
+}
+
+.btn_area {
+	margin-top: 26px;
+	height: 49px;
+	font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+}
+
+.join {
+	display: inline-table;
+	vertical-align: top;
+	width: 80px;
+	height: 36px;
+	color: #1a73e8;
+    font-size: 15px;
+}
+
+.join div {
+	display: table-cell;
+	height: 36px;
+	vertical-align: middle;
+	cursor: pointer;
+} 
+
+.next_area {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 80px);
+	text-align: right;
+}
+
+.next_btn {
+	display: inline-table;
+	background-color: #1a73e8;
+	border-radius: 4px;
+	width: 88px;
+	height: 36px;
+	cursor: pointer;
+}
+
+.next_btn:hover {
+	background-color: #1762c6;
+}
+
+.next_text {
+	display: table-cell;
+	vertical-align: middle;
+	width: 88px;
+	height: 36px;
+	color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="box">
+	<div class="logo"></div>
+	<div class="login_text">로그인</div>
+	<div class="login_info">Google 계정 사용</div>
+	<div>
+		<input type="text" class="email" placeholder="이메일 또는 휴대전화" />
+	</div>
+	<div class="email_forget">이메일을 잊으셨나요?</div>
+	<div class="info">내 컴퓨터가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하세요. <span>자세히 알아보기</span></div>
+	<div class="btn_area">
+		<div class="join">
+			<div>계정 만들기</div>
+		</div>
+		<div class="next_area">
+			<div class="next_btn">
+				<div class="next_text">다음</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+<div class="footer_left">
+	<select>
+		<option>eesti</option>
+		<option>English</option>
+		<option>Filipino</option>
+		<option>한국어</option>
+		<option selected="selected">한국어</option>
+	</select>
+</div>
+<div class="footer_right">
+	<div>도움말</div>
+	<div>개인정보보호</div>
+	<div>약관</div>
+</div>
+</div>
+</div>
+</body>
+</html>

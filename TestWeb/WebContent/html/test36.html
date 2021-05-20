@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 선언
+function test() { //text() 쓰면 아래내용 호출
+	console.log("test호출");
+}
+function plus(a, b) { //plus(a, b) 가져오면 아래내용 호출, 더해서 보여준다.
+	console.log(a + b);
+}
+function test2() { //test2() 쓰면 아래내용 돌려준다.
+	return "Hello";
+}
+
+//호출
+test();
+plus(1, 3);
+console.log(test2());
+
+function a() {
+	var t = document.getElementById("txt");
+//			문서=HTML .=~안에 있는   Id가 txt인 것
+	console.log(t.value);
+}
+
+function b() {
+	var t = document.getElementById("txt");
+
+	t.value =""; // 값 지움. 회원가입시 아이디 중복일 때 사용.
+}
+
+</script>
+</head>
+<body>
+<input type="text" id="txt" value="aaaa"/>
+<input type="button" value="테스트" onclick="a();" />
+<input type="button" value="테스트2" onclick="b();" />
+</body>
+</html>

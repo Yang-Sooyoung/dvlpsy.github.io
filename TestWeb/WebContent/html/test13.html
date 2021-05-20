@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS TABLE</title>
+<style type="text/css">
+.t {
+	border-collapse: collapse; /* 테이블 셀 테두리 하나로 합치게 지정 */
+}
+.t tr {
+	border-bottom: 1px solid #4E4E4E;
+	height: 50px;
+}
+
+.t th {
+	background-color: #AA44CC;
+}
+
+.t td {
+	text-align: center;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+<table class="t">
+	<colgroup>
+		<col width="150px" />
+		<col width="200px" />
+		<col width="150px" />
+	<tbody>
+		<tr>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+		</tr>
+		<tr>
+			<td>가</td>
+			<td>나</td>
+			<td>다</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

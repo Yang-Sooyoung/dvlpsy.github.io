@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+.c {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	height: 150px;
+	border-radius:75px;
+	background-color: #ff4e4e;
+}
+</style>
+<script type = "text/javascript" 
+		src="../js/jquery-1.12.4.js"></script>
+<script type = "text/javascript">
+$(document).ready(function() {
+	$("#onBtn").on("click", function() {
+		$(".c").fadeIn(3000);
+	});
+	$("#offBtn").on("click", function() {
+		$(".c").delay(3000).fadeOut(3000, function() {
+			alert("사라짐");
+		});
+	});
+});
+</script>
+</head>
+<body>
+<input type="button" value="ON" id="onBtn"/>
+<input type="button" value="OFF" id="offBtn"/>
+<br/>
+<div class="c"></div>
+</body>
+</html>

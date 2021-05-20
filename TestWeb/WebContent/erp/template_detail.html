@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ERP 공용 템플릿</title>
+<link rel="stylesheet" type="text/css" href="./css/common/main.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/board.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/detail.css" />
+<style type="text/css">
+/* 상세보기영역 가로변경 시 */
+.underbox {
+	width: 800px;
+}
+
+/* 버튼영역 가로변경 시 */
+.detail_btn_area {
+	width: 800px;
+}
+/* 개별 css는 여기에 */
+</style>
+</head>
+<body>
+	<!-- Top Bar -->
+	<div class="top_area">
+		<div class="logo"></div>
+		<div class="top_menu_area">
+			<div class="top_menu">
+				<div class="top_menu_txt">Groupware</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">HR</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">Sales</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">CRM</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">EIS</div>
+			</div>
+		</div>
+		<div class="info_area">
+			<div class="info_wrap">
+				<div class="photo">
+					<img alt="사진" src="./images/sample/photo.jpg">
+				</div>
+				<div class="info_txt">
+					신사동 영업2팀<br />사원 홍길동
+				</div>
+				<div class="top_option_btn"></div>
+				<div class="top_noti_btn">
+					<div class="noti_cnt_on">3</div>
+				</div>
+				<div class="logout_btn">
+					<div class="logout_btn_txt">로그아웃</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Left Menu -->
+	<div class="left_area">
+
+		<div class="menu1_title">
+			<div class="menu1_txt">Sales</div>
+		</div>
+
+		<div class="menu2_wrap">
+			<div class="menu2_title">
+				<div class="menu2_txt">상품관리</div>
+			</div>
+		</div>
+		<div class="menu2_wrap">
+			<div class="menu2_title">
+				<div class="menu2_txt">기업관리</div>
+			</div>
+		</div>
+		<div class="menu2_wrap_on">
+			<div class="menu2_title">
+				<div class="menu2_txt">영업관리</div>
+			</div>
+			<div class="menu3_wrap">
+				<div class="menu3_title_on">
+					<div class="menu3_txt">영업리스트</div>
+				</div>
+				<div class="menu3_title">
+					<div class="menu3_txt">영업등록</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Contents -->
+	<div class="contents_area">
+		<div class="gnb">
+			<div class="gnb_txt">Home > Sales > 영업관리 > 영업리스트</div>
+		</div>
+		<div class="contents_header">
+			<div class="contents_header_txt">영업리스트</div>
+		</div>
+		<div class="contents">
+			<!-- 여기에 내용을 작성하시오. -->
+			<div class="underbox">
+				<div class="underline">
+					<div class="line1">이름 *</div>
+					<div class="con1">
+						<input type="text" />
+					</div>
+					<div class="line1">고객번호</div>
+					<div class="con1">
+						<input type="text" />
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">생년월일 *</div>
+					<div class="con1">
+						<input type="date" />
+					</div>
+					<div class="line1">등록일</div>
+					<div class="con1">
+						<input type="date" />
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">성별 *</div>
+					<div class="con1">
+						<input type="radio" name="gender" checked="checked" />남성
+						<input type="radio" name="gender" />여성
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">전화번호 *</div>
+					<div class="con1">
+						<input type="text" placeholder="전화번호 '-'를 제외하고 입력"/>
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">이메일</div>
+					<div class="con3">
+						<input type="text" class="email" /> @ <input type="text" placeholder="직접입력" />
+						<select class="selectbox" name="email_selectbox">
+							<option value="이메일 선택" selected="selected">이메일 선택</option>
+							<option value="naver.com">naver.com</option>
+							<option value="gmail.com">gmail.com</option>
+							<option value="gmail.com">nate.com</option>
+						</select>
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">주소</div>
+					<div class="con3">
+						<input type="text" disabled="disabled" /> 
+						<input type="button" value="주소 찾기" />
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">수신 동의</div>
+					<div class="con2">
+						<input type="checkbox" />문자 
+						<input type="checkbox" />카톡
+						<input type="checkbox" />이메일
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">메모</div>
+					<div class="con3"><textarea rows="10" cols="20"></textarea></div>
+				</div>
+			</div>
+			<div class="detail_btn_area">
+				<input type="button" value="저장" />
+				<input type="button" value="취소" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

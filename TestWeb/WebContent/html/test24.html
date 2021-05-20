@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JAVASCRIPT 변수</title>
+<script type="text/javascript">
+//한줄주석
+/*  
+ 여러줄 주석
+ */
+ // alert(값) : 값을 경고창에 띄운다.
+var a = "치킨";
+console.log(a);
+
+var b = 7;
+var c = 22;
+// 문자열의 더하기는 이어준다는 의미, 괄호부터 계산하고 문자열과 계산, (b+c:722)
+console.log("b + c :" + (b + c));
+console.log(b - c);
+console.log(b * c);
+console.log(b / c);
+console.log(b % c);
+
+
+
+
+var a1 = 10;
+var a2 = 20;
+var a3 = "30";
+
+console.log(a1 + a2 + a3);
+console.log(a3 + a2 + a1);
+// 예상 출력 결과를 작성하시오. (순서대로 계산, 문자열 숫자 이어짐.)
+// 3030
+// 302010
+
+console.log(a3 * 2);
+console.log(a * 2); // NaN : 계산할수없다. 
+// b : 7, c : 22
+console.log(b > c); //false
+console.log(b < c); //true
+console.log(b >= c); //false
+console.log(b <= c); //true
+console.log(b == c); //false
+console.log(b != c); //true
+
+if(b > c) { // 값이 참이면 "" 출력
+	console.log("b가 c보다 크다");
+} else if(b == c) {
+	console.log("b와 c가 같다");
+} else {
+	console.log("b가 c보다 작다");
+}
+
+
+//score에 따른 학점을 출력하시오.
+// A - 90 ~ 100
+// B - 80 ~ 90
+// C - 70 ~ 80
+// D - 60 ~ 50
+// F - 50 ~ 0
+
+var score = 77;
+
+if(score >= 90) {
+	console.log("A");
+} else if(score >= 80) {
+	console.log("B");
+} else if(score >= 70) {
+	console.log("C");
+} else if(score >= 60) {
+	console.log("D");
+} else { //조건 쓰면 안됨
+	console.log("F");
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

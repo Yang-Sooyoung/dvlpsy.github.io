@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구디아카데미 네이버카페 연습</title>
+<style type="text/css">
+.a {
+	border-collapse: collapse; /* 테이블을 디자인을 주겠다.선, */
+}
+
+.box {
+	margin: 6px;
+	padding: 2px;
+	background-color: #FEE8E8;
+	height: 20px;
+	width: 30px;
+	font-size: 13px;
+	cursor: pointer;
+	font-family: "맑은 고딕", "돋움";
+	border: 1px solid #F9C7C7;
+	
+}
+.a thead th {
+	text-align: center;
+	cursor: pointer;
+	font-size: 13px;
+	border-top: 1px solid #070707;
+	border-bottom: 1px solid #E5E2E2;
+	padding: 11px;
+}
+
+.a tbody tr {
+	text-align: center;
+	cursor: pointer;
+	font-size: 13px;
+	border-top: 1px solid #E5E2E2;
+	border-bottom: 1px solid #E5E2E2;
+}
+
+.a tbody th {
+	font-weight: normal;
+	background-color:#F2F2F2;
+	font-family: "맑은 고딕", "돋움";
+
+}
+
+.a tbody th:nth-child(1), .a tbody th:nth-child(2) {
+	color: #FF4E59;
+	font-weight: bold;	
+}
+
+.a tbody th:nth-child(2) {
+	text-align: left;
+}
+
+.a td:nth-child(2) {
+	text-align: left;
+} /* 클래스 a안 col의 자식중 2번째에게 적용 */
+
+.a thead th:nth-child(3) {
+	text-align: left;
+}
+.a tbody td:nth-child(2) .a tbody td:nth-child(3){
+	text-align: left;
+}
+.a tbody td	{
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+<table class="a">
+	<colgroup>
+		<col width="30px" />
+		<col width="350px" /> <!-- 이거 왼쪽정렬 -->
+		<col width="90px" />
+		<col width="70px" />
+		<col width="70px" />
+		<col width="70px" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th></th>
+			<th>제목</th>
+			<th>작성자</th> <!-- 이거 왼쪽정렬 -->
+			<th>작성일</th>
+			<th>조회</th>
+			<th>좋아요▼</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th><div class="box">공지</div></th>
+			<th>구디아카데미의 학점은행제 특별 프로모션 안내</th>
+			<th>구디아카데미</th>
+			<th>2020.07.27</th>
+			<th>91</th>
+			<th>0</th>
+		</tr>
+		<tr>
+			<td>15145</td>
+			<td>0827과제제출합니다.</td>
+			<td>자바 유지연</td>
+			<td>09:33</td>
+			<td>1</td>
+			<td>0</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>추가근무 조회 화면</title>
+<link rel="stylesheet" type="text/css" href="./css/common/main.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/board.css" />
+<style type="text/css">
+/* 검색영역 가로변경 시 */
+.default_search_area {
+	width: 1000px;
+}
+/* 목록영역 가로변경 시 */
+.default_board {
+	width: 1000px;
+}
+/* 개별 css는 여기에 */
+</style>
+</head>
+<body>
+	<!-- Top Bar -->
+	<div class="top_area">
+		<div class="logo"></div>
+		<div class="top_menu_area">
+			<div class="top_menu">
+				<div class="top_menu_txt">Groupware</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">HR</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">Sales</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">CRM</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">EIS</div>
+			</div>
+		</div>
+		<div class="info_area">
+			<div class="info_wrap">
+				<div class="photo">
+					<img alt="사진" src="./images/sample/photo.jpg">
+				</div>
+				<div class="info_txt">
+					인사<br/>부장 인부장
+				</div>
+				<div class="top_option_btn"></div>
+				<div class="top_noti_btn">
+					<div class="noti_cnt_on">3</div>
+				</div>
+				<div class="logout_btn">
+					<div class="logout_btn_txt">로그아웃</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Left Menu -->
+	<div class="left_area">
+		<div class="menu1_title">
+			<div class="menu1_txt">HR</div>
+		</div>
+		<div class="menu2_wrap_on">
+			<div class="menu2_title">
+				<div class="menu2_txt">근태관리</div>
+			</div>
+		<div class="menu3_wrap">
+			<div class="menu3_title">
+				<div class="menu3_txt">근태코드관리</div>
+			</div>
+			<div class="menu3_title_on">
+				<div class="menu3_txt">추가근무관리</div>
+			</div>
+		</div>
+		</div>
+		<div class="menu2_wrap">
+			<div class="menu2_title">
+				<div class="menu2_txt">연차관리</div>
+			</div>
+		</div>
+	</div>
+	<!-- Contents -->
+	<div class="contents_area">
+		<div class="gnb">
+			<div class="gnb_txt">Home > HR > 근태관리 > 추가근무관리</div>
+		</div>
+		<div class="contents_header">
+			<div class="contents_header_txt">추가근무 조회</div>
+		</div>
+		<div class="contents">
+			<!-- 여기에 내용을 작성하시오. -->
+			<div class="default_search_area">
+				<select>
+					<option>사원번호</option>
+					<option>부서</option>
+				</select> <input type="text" placeholder="검색어를 입력해주세요." />
+				<div class="search_btn_area">
+					<input type="button" value="검색" />
+					<input type="button" value="등록" onclick="window.open('http://localhost:8090/TestWeb/erp/page08.html','추가근무 등록')"/>
+				</div>
+			</div>
+			<div class="default_board">
+				<table>
+					<colgroup>
+						<col width="50px" />
+						<col width="80px" />
+						<col width="70px" />
+						<col width="70px" />
+						<col width="70px" />
+						<col width="120px" />
+						<col width="120px" />
+						<col width="120px" />
+						<col width="140px" />
+						<col width="80px" />
+						<col width="80px" />
+					</colgroup>
+					<thead>
+						<tr class="top">
+							<th>No</th>
+							<th>사원번호</th>
+							<th>성명</th>
+							<th>부서</th>
+							<th>직급</th>
+							<th>근태코드명</th>
+							<th>근태코드설명</th>
+							<th>내용</th>
+							<th>등록일</th>
+							<th>시작시간</th>
+							<th>종료시간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">1</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">4</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">인부장</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">인사</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">부장</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">A01</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">주간근무</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">출퇴근카드 오류</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">2021-01-29</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">9:00</td>
+							<td onclick="window.open('http://localhost:8090/TestWeb/erp/page07.html','추가근무 상세조회')">18:00</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>5</td>
+							<td>인사원</td>
+							<td>인사</td>
+							<td>대리</td>
+							<td>A02</td>
+							<td>연장근무</td>
+							<td>프로젝트 기획 보완</td>
+							<td>2021-01-29</td>
+							<td>18:00</td>
+							<td>00:00</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>6</td>
+							<td>영부장</td>
+							<td>영업</td>
+							<td>부장</td>
+							<td>A03</td>
+							<td>야간근무</td>
+							<td>프로젝트 오류 수정</td>
+							<td>2021-01-29</td>
+							<td>00:00</td>
+							<td>8:00</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="page_wrap">
+					<div class="page_nation">
+						<div class="arrow prev"></div>
+						<div class="page_on">1</div>
+						<div class="page">2</div>
+						<div class="page">3</div>
+						<div class="page">4</div>
+						<div class="page">5</div>
+						<div class="arrow next"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

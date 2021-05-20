@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>w3schools 사이트 연습</title>
+<style type="text/css">
+body {
+margin: 0px;
+font-size: 0px;
+
+}
+.topbar1{
+	padding: 20px 16px 0.01em;
+	font-family: fontawesome;
+	font-size: 15px;
+    line-height: 1.5;
+    width: 100px;
+    min-width: 1222px;
+    height: 50px;
+}
+.com{
+	color: #4CAF50;
+	font-family: fontawesome;
+	line-height: 1;
+	font-size: 37px;
+    letter-spacing: 3px;
+    
+}
+.logo {
+	display: inline-block;
+	font-family: fontawesome;
+	line-height: 1;
+	font-size: 37px;
+	letter-spacing: 3px;
+    color: #555555;
+}
+.welcome {
+	display: inline-block;
+	line-height: 50px;
+    margin-right: 20px;
+    font-family: 'Segoe UI',Arial,sans-serif;
+    float: right!important;
+    letter-spacing: 4px;
+    
+}
+.login {
+	display: inline-block;
+	line-height: 1.5;
+    padding: 6px 14px;
+    top: 5px;
+    color: #fff;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    font-family: "Segoe UI",Arial,sans-serif;
+	float: right!important;
+	font-size: 15px;
+}
+.topbar2 {
+	display: table;
+	font-family: "Segoe UI",Arial,sans-serif;
+	z-index: 4;
+    font-size: 17px;
+    color: #fff !important;
+    background-color: #4CAF50 !important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    width: 100%;
+    overflow: hidden;
+    letter-spacing: 4px;
+    line-height: 1.5;
+    height: 57px;
+}
+.tuto, .refe, .exam, .exer, .cert, .gongback {
+	display: table-cell;
+	padding: 8px 16px;
+	width: auto;
+	border: none;
+	outline: 0;
+	height:25px;
+	padding-top: 16px!important;
+    padding-bottom: 16px!important;
+    vertical-align: middle;
+    overflow: hidden;
+    text-align: center;
+    font-family: "Segoe UI",Arial,sans-serif;
+    z-index: 4;
+    font-size: 17px;
+    background-color: #4CAF50 !important;
+    letter-spacing: 4px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.gongback {
+}
+
+
+.circle, .earth, .search {
+	display: table-cell;
+	padding: 8px 16px;
+	width: auto;
+	border: none;
+	outline: 0;
+	height: 25px;
+	border: none;
+	padding-top: 16px!important;
+    padding-bottom: 16px!important;
+    vertical-align: middle;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Segoe UI",Arial,sans-serif;
+    z-index: 4;
+    font-size: 17px;
+    background-color: #4CAF50 !important;
+    letter-spacing: 4px;
+    line-height: 1.5;
+}
+.middle {
+	display: table;
+}
+.left {
+	display: inline-table;
+	z-index: 3;
+	margin-bottom: -155px;
+	position: absolute !important;
+	color: #000!important;
+    background-color: #fff!important;
+	font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 230px;
+    height: 100%;
+    overflow: hidden !important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.left_name {
+	display: table-cell;
+	margin-top: 16px!important;
+	font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+	font-size: 20px;    
+	color: #000!important;
+    background-color: #fff!important;
+    line-height: 1.5;
+    height: 198px;
+    width: 30px;
+	padding: 0.150px 16px 0.150px 16px;
+	margin: 16px 0px 10px 0px;
+}
+.right {
+	display: inline-table;
+	transition: margin-left .4s;
+	margin-left: 230px !important;
+	font-family: Verdana,sans-serif;
+	font-size: 15px;
+    line-height: 1.5;
+    min-width: 769px;
+    width: 1024px;
+    height: 100%;
+    overflow: hidden !important;
+    transition: margin-left .4s;
+}
+.right_top {
+	display: inline-table;
+}
+
+.top_left {
+	display: table-cell;
+	font-size: 80px;
+	color: #555555;
+    margin: 2px 0 -20px 0 !important;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400; 
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 3%;
+    width: 49.99999%;
+	font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    vertical-align: center;
+    padding: 16px;
+    color: #000!important;
+	width: 418.547px;
+	height: 384px;   
+	text-align: center!important;
+}
+
+.top_right {
+	display: table-cell;
+	padding: 3%;
+    width: 49.99999%;
+	font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    vertical-align: center;
+    padding: 16px;
+    color: #000!important;
+    background-color: #f1f1f1!important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+	width: 418.547px;
+	height: 384px;
+}
+
+.bottom_left {
+}
+
+.bottom_right {
+}
+
+</style>
+</head>
+<body>
+<div class="topbar1">
+	<div class="logo">w3schools<span class="com">.com</span></div>
+	<div class="login">LOG IN</div>
+	<div class="welcome">THE WORLD'S LARGEST WEB DEVELOPER SITE</div>
+</div>
+<div class="topbar2">
+	<div class="tuto">TUTORIALS ▼</div>
+	<div class="refe">REFERENCES ▼</div>
+	<div class="exam">EXAMPLES ▼</div>
+	<div class="exer">EXERCISES ▼</div>
+	<div class="cert">CERTIFICATES ▼</div>
+	<div class="gongback"></div>
+	<div class="circle">◑</div>
+	<div class="earth">○</div>
+	<div class="search">○</div>
+</div>
+<div class="middle">
+	<div class="left">
+		<div class="left_name">HTML and CSS</div>
+	</div>
+	<div class="right">
+		<div class="right_top">
+			<div class="top_left">HTML</div>
+			<div class="top_right">HTML Example:</div>
+		</div>
+		<div class="right_bottom">
+			<div class="bottom_left">CSS Example:</div>
+			<div class="bottom_right">CSS</div>		
+		</div>
+	</div>
+</div>
+</body>
+</html>

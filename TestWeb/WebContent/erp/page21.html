@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연차사용 수정 화면</title>
+<link rel="stylesheet" type="text/css" href="./css/common/main.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/board.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/detail.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/popup.css" />
+<style type="text/css">
+/* 팝업 크기변경 시 */
+.popup {
+	width: 400px;
+	height: 400px;
+	top: calc(50% - 200px);
+	left: calc(50% - 200px);
+}
+/* 상세보기영역 가로변경 시 */
+.underbox {
+	width: 450px;
+}
+/* 버튼영역 가로변경 시 */
+.detail_btn_area {
+	width: 450px;
+}
+/* 개별 css는 여기에 */
+.popup_bg, .popup {
+	display: none;
+}
+.line1 {
+	width: 150px;
+}
+.con1 {
+	display: table-cell;
+	width: 300px;
+	text-align: center;
+	padding: inherit;
+}
+input[type="text"] {
+	display: table-cell;
+	width: 288px;
+	height: 33px !important;
+	padding: inherit;
+	margin-top: 2px !important;
+	margin-bottom: 4px !important;
+}
+input[type="date"] {
+	display: table-cell;
+	width: 288px;
+	height: 33px !important;
+	margin: 0 3px;
+	padding: 1px 2px;
+	margin-top: 2px !important;
+	margin-bottom: 4px !important;
+}
+</style>
+</head>
+<body>
+	<!-- popup -->
+	<div class="popup_bg"></div>
+	<div class="popup">
+		<div class="popup_title">
+			<div class="popup_title_txt">연차사용</div>
+		</div>
+		<div class="popup_contents">
+		<!-- 팝업내용들어감  -->
+		수정 하시겠습니까?
+		</div>
+		<div class="popup_btn">
+			<input type="button" value="저장" onclick="window.open('http://localhost:8090/TestWeb/erp/page19.html','연차사용 상세조회')"/>
+			<input type="button" value="취소" onclick="window.open('http://localhost:8090/TestWeb/erp/page19.html','연차사용 상세조회')"/>
+		</div>
+	</div>
+<!-- Top Bar -->
+<div class="top_area">
+	<div class="logo"></div>
+	<div class="top_menu_area">
+		<div class="top_menu">
+			<div class="top_menu_txt">Groupware</div>
+		</div>
+		<div class="top_menu">
+			<div class="top_menu_txt">HR</div>
+		</div>
+		<div class="top_menu">
+			<div class="top_menu_txt">Sales</div>
+		</div>
+		<div class="top_menu">
+			<div class="top_menu_txt">CRM</div>
+		</div>
+		<div class="top_menu">
+			<div class="top_menu_txt">EIS</div>
+		</div>
+	</div>
+	<div class="info_area">
+		<div class="info_wrap">
+			<div class="photo">
+				<img alt="사진" src="./images/sample/photo.jpg">
+			</div>
+			<div class="info_txt">인사<br/>부장 인부장</div>
+			<div class="top_option_btn"></div>
+			<div class="top_noti_btn"><div class="noti_cnt_on">3</div></div>
+			<div class="logout_btn"><div class="logout_btn_txt">로그아웃</div></div>
+		</div>
+	</div>
+</div>
+	<!-- Left Menu -->
+	<div class="left_area">
+		<div class="menu1_title">
+			<div class="menu1_txt">HR</div>
+		</div>
+		<div class="menu2_wrap">
+			<div class="menu2_title">
+				<div class="menu2_txt">근태관리</div>
+			</div>
+		</div>
+		<div class="menu2_wrap_on">
+			<div class="menu2_title">
+				<div class="menu2_txt">연차관리</div>
+			</div>
+		<div class="menu3_wrap">
+			<div class="menu3_title">
+				<div class="menu3_txt">휴가코드관리</div>
+			</div>
+			<div class="menu3_title">
+				<div class="menu3_txt">연차생성관리</div>
+			</div>
+			<div class="menu3_title_on">
+				<div class="menu3_txt">연차사용관리</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- Contents -->
+	<div class="contents_area">
+		<div class="gnb">
+			<div class="gnb_txt">Home > HR > 연차관리 > 연차사용관리</div>
+		</div>
+		<div class="contents_header">
+			<div class="contents_header_txt">연차사용 수정</div>
+		</div>
+		<div class="contents">
+	<!-- 여기에 내용을 작성하시오. -->
+		<div class="underbox">
+				<div class="underline">
+					<div class="line1">사원번호</div>
+					<div class="con1">4</div>
+				</div>
+				<div class="underline">
+					<div class="line1">성명</div>
+					<div class="con1">인부장</div>
+				</div>
+				<div class="underline">
+					<div class="line1">부서</div>
+					<div class="con1">인사</div>
+				</div>
+				<div class="underline">
+					<div class="line1">직급</div>
+					<div class="con1">부장</div>
+				</div>
+				<div class="underline">
+					<div class="line1">휴가코드명*</div>
+					<div class="con1">
+						<input type="radio" name="vact_code_nm" value="1" checked="checked"/>B01
+						<input type="radio" name="vact_code_nm" value="2"/>B02
+						<input type="radio" name="vact_code_nm" value="3"/>B03
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">휴가코드설명*</div>
+					<div class="con1">
+						<input type="text" value="유급휴가"/>
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">내용*</div>
+					<div class="con1">
+						<input type="text" value="가족여행"/>
+					</div>
+				</div>
+				<div class="underline">
+					<div class="line1">등록일*</div>
+						<input type="text" value="2021-01-29" readonly="readonly"/>
+				</div>
+				<div class="underline">
+					<div class="line1">시작일*</div>
+						<input type="date" value="2020-10-20"/>
+				</div>
+				<div class="underline">
+					<div class="line1">종료일*</div>
+						<input type="date" value="2020-10-21"/>
+				</div>
+				<div class="underline">
+					<div class="line1">일수*</div>
+						<input type="text" value="1" readonly="readonly"/>
+				</div>
+				<div class="underline">
+					<div class="line1">결재상태*</div>
+						<input type="text" value="요청" readonly="readonly"/>
+					</div>
+				</div>
+				<div class="detail_btn_area">
+				<input type="button" value="저장" onclick="window.open('http://localhost:8090/TestWeb/erp/page18.html','연차생성 조회')"/> 
+				<input type="button" value="목록" onclick="window.open('http://localhost:8090/TestWeb/erp/page18.html','연차생성 조회')"/>
+			</div>
+		</div>
+	</div>
+</html>

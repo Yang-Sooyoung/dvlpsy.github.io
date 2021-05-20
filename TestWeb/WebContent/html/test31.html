@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript 연습</title>
+<script type="text/javascript">
+var a = 3.1415;
+
+console.log(Math.round(a));
+console.log(Math.ceil(a));
+console.log(Math.floor(a));
+
+console.log(Math.abs(-2.8));
+
+console.log(Math.random());
+// 2 ~ 3
+console.log(Math.floor(Math.random()*2) +2);
+
+var s = "Hello World!!";
+
+console.log(s.length);  
+console.log(s.substring(3));  
+console.log(s.substring(3, 7));
+console.log(s.substring(7, 10));
+
+console.log(s.indexOf("l"));
+console.log(s.indexOf("l",3));
+
+console.log(s.indexOf("k")); //찾는 값이 없을 떄: -1, 인덱스 기준 -1 존재 불가능,
+
+console.log(s.replace("l", "k"));
+
+console.log(s.replace(/l/gi, "k"));
+
+console.log(s.toLowerCase());
+console.log(s.toUpperCase());
+//trim : 앞 뒤 공백제거
+console.log("	12	34	".trim());
+
+//charAt(인덱스번호) : 해당 번호의 문자를 돌려줌
+console.log(s.charAt(0));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

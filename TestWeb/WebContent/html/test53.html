@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+var w = 0;
+var d = 0;
+var l = 0;
+var random;
+$(document).ready(function() {  //준비가 되면 함수를 시작하겠다.
+	$("[name='sel']").on("click",function() {
+		random = (Math.floor(Math.random()*3)+1);
+		console.log(random)
+		switch($(this).val()) { //""붙이면 문자열 처리, 기능은 보라색, 옵션 파란색
+			case "가위" : 
+				if (random == 1) { // 가위
+				d++;
+				}
+				else if (random == 2) {
+				l++;
+				}
+				else{
+				w++;
+				}
+			break;
+			case "바위" :
+				if (random == 1) { // 바위
+					w++;
+					}
+					else if (random == 2) {
+					d++;
+					}
+					else{
+					l++;
+					}
+			break;
+			case "보" :
+				if (random == 1) { //보
+					l++;
+					}
+					else if (random == 2) {
+					w++;
+					}
+					else{
+					d++;
+					}
+			break;
+			}
+		$("#w").html(w);
+		$("#d").html(d);
+		$("#l").html(l);
+	});
+});
+</script>
+</head>
+<body>
+<div>
+W<span id="w">0</span>
+D<span id="d">0</span>
+L<span id="l">0</span>
+</div>
+<input type="button" value="가위" name="sel" />
+<input type="button" value="바위" name="sel" />
+<input type="button" value="보" name="sel" />
+<div id="res"></div>
+</body>
+</html>

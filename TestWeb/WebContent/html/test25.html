@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JAVASCRIPT 오름차순 정렬</title>
+<script type="text/javascript">
+var a = 5; 
+var b = 7;
+var c = 3;
+var d = 0;
+// a,b,c를 오름차순 정렬하시오.
+/* hint1. 두 물잔의 물을 섞이지 않고 교환하는 방법 */
+// 토너먼트 식으로 해야함. 바뀐값이 계속 적용.
+//작성
+if(a > b) {// 5 7 0 , a가 b보다 크면,  (복사X)
+	d=a;
+	a=b;
+	b=d;
+}
+if(a > c) {// 5 3 0 , a가 c보다 크면,  (복사O)
+	d=a; // d에, a에 있던 값 d5 <= a5 
+	a=c; // a에, c에 있던 값 a3 <= c3	a=3
+	c=d; //	c에, d에 있던 값 c5 <= d5
+}
+if(b > c) {// 7 5 0 , b가 c보다 크면,  (복사O)
+	d=b; // d에, b에 있던 값 d7 <= b7   
+	b=c; // b에, c에 있던 값 b5 <= c5   b=5
+	c=d; // c에, d에 있던 값 c7 <= d7   c=7
+}
+//작성끝
+console.log(a); //3
+console.log(b); //5
+console.log(c); //7
+</script>
+</head>
+<body>
+
+</body>
+</html>

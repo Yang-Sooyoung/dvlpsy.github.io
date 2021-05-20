@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>근태코드 삭제 화면</title>
+<link rel="stylesheet" type="text/css" href="./css/common/main.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/board.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/detail.css" />
+<link rel="stylesheet" type="text/css" href="./css/common/popup.css" />
+<style type="text/css">
+/* 팝업 크기변경 시 */
+.popup {
+	width: 400px;
+	height: 400px;
+	top: calc(50% - 200px);
+	left: calc(50% - 200px);
+}
+/* 상세보기영역 가로변경 시 */
+.underbox {
+	width: 450px;
+}
+/* 버튼영역 가로변경 시 */
+.detail_btn_area {
+	width: 450px;
+}
+/* 개별 css는 여기에 */
+.line1 {
+	width: 150px;
+}
+.con1 {
+	display: table-cell;
+	width: 300px;
+	text-align: center;
+	padding: inherit;
+}
+</style>
+</head>
+<body>
+	<!-- popup -->
+	<div class="popup_bg"></div>
+	<div class="popup">
+		<div class="popup_title">
+			<div class="popup_title_txt">근태코드</div>
+		</div>
+		<div class="popup_contents">
+		<!-- 팝업내용들어감  -->
+		삭제 하시겠습니까?
+		</div>
+		<div class="popup_btn">
+			<input type="button" value="삭제" onclick="window.open('http://localhost:8090/TestWeb/erp/page01.html','근태코드 조회')"/>
+			<input type="button" value="취소" onclick="window.open('http://localhost:8090/TestWeb/erp/page02.html','근태코드 상세조회')"/>
+		</div>
+	</div>
+	<!-- Top Bar -->
+	<div class="top_area">
+		<div class="logo"></div>
+		<div class="top_menu_area">
+			<div class="top_menu">
+				<div class="top_menu_txt">Groupware</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">HR</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">Sales</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">CRM</div>
+			</div>
+			<div class="top_menu">
+				<div class="top_menu_txt">EIS</div>
+			</div>
+		</div>
+		<div class="info_area">
+			<div class="info_wrap">
+				<div class="photo">
+					<img alt="사진" src="./images/sample/photo.jpg">
+				</div>
+				<div class="info_txt">
+					인사<br/>부장 인부장
+				</div>
+				<div class="top_option_btn"></div>
+				<div class="top_noti_btn">
+					<div class="noti_cnt_on">3</div>
+				</div>
+				<div class="logout_btn">
+					<div class="logout_btn_txt">로그아웃</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Left Menu -->
+	<div class="left_area">
+		<div class="menu1_title">
+			<div class="menu1_txt">HR</div>
+		</div>
+		<div class="menu2_wrap_on">
+			<div class="menu2_title">
+				<div class="menu2_txt">근태관리</div>
+			</div>
+		<div class="menu3_wrap">
+			<div class="menu3_title_on">
+				<div class="menu3_txt">근태코드관리</div>
+			</div>
+			<div class="menu3_title">
+				<div class="menu3_txt">추가근무관리</div>
+			</div>
+		</div>
+		</div>
+		<div class="menu2_wrap">
+			<div class="menu2_title">
+				<div class="menu2_txt">연차관리</div>
+			</div>
+		</div>
+	</div>
+	<!-- Contents -->
+	<div class="contents_area">
+		<div class="gnb">
+			<div class="gnb_txt">Home > HR > 근태관리 > 근태코드관리</div>
+		</div>
+		<div class="contents_header">
+			<div class="contents_header_txt">근태코드 상세조회</div>
+		</div>
+		<div class="contents">
+	<!-- 여기에 내용을 작성하시오. -->
+			<div class="underbox">
+				<div class="underline">
+					<div class="line1">근태코드명</div>
+					<div class="con1">A01</div>
+				</div>
+				<div class="underline">
+					<div class="line1">근태코드설명</div>
+					<div class="con1">주간근무</div>
+				</div>
+			</div>
+			<div class="detail_btn_area">
+				<input type="button" value="수정" onclick="window.open('http://localhost:8090/TestWeb/erp/page04.html','근태코드 수정')"/> 
+				<input type="button" value="삭제" onclick="window.open('http://localhost:8090/TestWeb/erp/page19.html','근태코드 삭제')"/>
+				<input type="button" value="목록" onclick="window.open('http://localhost:8090/TestWeb/erp/page01.html','근태코드 조회')" />
+			</div>
+		</div>
+	</div>
+</html>
