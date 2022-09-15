@@ -1,4 +1,4 @@
-## 코딩을 연습하는 공간입니다. :four_leaf_clover:
+:four_leaf_clover: ## 코딩을 연습하는 공간입니다. :four_leaf_clover:
 ***
 > 1. Vanila > vanila.js 연습 :tulip:
 > 2. SampleSpring > spring framework 연습 :rose:
